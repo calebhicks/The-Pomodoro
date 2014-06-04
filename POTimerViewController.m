@@ -9,8 +9,6 @@
 #import "POTimerViewController.h"
 
 @interface POTimerViewController ()
-@property (assign, nonatomic) NSInteger minutes;
-@property (assign, nonatomic) NSInteger seconds;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startTimeButton;
@@ -39,6 +37,16 @@
     
 }
 
++ (POTimerViewController *)sharedInstance {
+    static POTimerViewController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[POTimerViewController alloc] init];
+
+    });
+    return sharedInstance;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -50,10 +58,17 @@
     [self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.active = YES;
     
-    self.minutes = 25;
-    
     [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
 
+}
+
+- (void)setTimer:(NSInteger)minutes{
+    
+    self.minutes = minutes;
+    self.seconds = 0;
+    
+    [self startTime:nil];
+        
 }
 
 - (void)updateLabel {
