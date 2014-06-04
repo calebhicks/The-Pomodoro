@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413961193EB90E00A4F262 /* POTimerViewController.m */; };
+		3C413964193EB90E00A4F262 /* POTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413962193EB90E00A4F262 /* POTimerViewController.xib */; };
+		3C413968193EB92E00A4F262 /* POListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413966193EB92E00A4F262 /* POListViewController.m */; };
+		3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413967193EB92E00A4F262 /* POListViewController.xib */; };
 		7141B2E6193DBDFD0084F9F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E5193DBDFD0084F9F1 /* Foundation.framework */; };
 		7141B2E8193DBDFD0084F9F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E7193DBDFD0084F9F1 /* CoreGraphics.framework */; };
 		7141B2EA193DBDFD0084F9F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E9193DBDFD0084F9F1 /* UIKit.framework */; };
@@ -32,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C413960193EB90E00A4F262 /* POTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POTimerViewController.h; path = ../POTimerViewController.h; sourceTree = "<group>"; };
+		3C413961193EB90E00A4F262 /* POTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POTimerViewController.m; path = ../POTimerViewController.m; sourceTree = "<group>"; };
+		3C413962193EB90E00A4F262 /* POTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POTimerViewController.xib; path = ../POTimerViewController.xib; sourceTree = "<group>"; };
+		3C413965193EB92E00A4F262 /* POListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POListViewController.h; path = ../POListViewController.h; sourceTree = "<group>"; };
+		3C413966193EB92E00A4F262 /* POListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POListViewController.m; path = ../POListViewController.m; sourceTree = "<group>"; };
+		3C413967193EB92E00A4F262 /* POListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POListViewController.xib; path = ../POListViewController.xib; sourceTree = "<group>"; };
 		7141B2E2193DBDFD0084F9F1 /* The Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7141B2E5193DBDFD0084F9F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7141B2E7193DBDFD0084F9F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,6 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C413955193EAE6000A4F262 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				3C413960193EB90E00A4F262 /* POTimerViewController.h */,
+				3C413961193EB90E00A4F262 /* POTimerViewController.m */,
+				3C413962193EB90E00A4F262 /* POTimerViewController.xib */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		3C413956193EAE7900A4F262 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				3C413965193EB92E00A4F262 /* POListViewController.h */,
+				3C413966193EB92E00A4F262 /* POListViewController.m */,
+				3C413967193EB92E00A4F262 /* POListViewController.xib */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
 		7141B2D9193DBDFD0084F9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +139,8 @@
 			children = (
 				7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */,
 				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
+				3C413955193EAE6000A4F262 /* Timer */,
+				3C413956193EAE7900A4F262 /* List */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
 				7141B2EC193DBDFD0084F9F1 /* Supporting Files */,
 			);
@@ -220,8 +252,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C413964193EB90E00A4F262 /* POTimerViewController.xib in Resources */,
 				7141B2F0193DBDFD0084F9F1 /* InfoPlist.strings in Resources */,
 				7141B2F8193DBDFD0084F9F1 /* Images.xcassets in Resources */,
+				3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,
+				3C413968193EB92E00A4F262 /* POListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +474,7 @@
 				7141B310193DBDFE0084F9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7141B311193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "The PomodoroTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +483,7 @@
 				7141B313193DBDFE0084F9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
