@@ -8,14 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString * const RoundCompleteNotification = @"RoundCompleteNotification";
+
+
 @interface POTimerViewController : UIViewController
 
-@property (assign, nonatomic) BOOL active;
-
-@property (assign, nonatomic) NSInteger minutes;
-@property (assign, nonatomic) NSInteger seconds;
-
-+ (POTimerViewController *)sharedInstance;
 
 - (void)setTimer:(NSInteger)minutes;
 

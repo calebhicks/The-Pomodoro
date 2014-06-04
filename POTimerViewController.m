@@ -7,11 +7,22 @@
 //
 
 #import "POTimerViewController.h"
+#import "POListViewController.h"
 
 @interface POTimerViewController ()
 
+@property (assign, nonatomic) BOOL active;
+
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startTimeButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseTimeButton;
+
+@property (assign, nonatomic) NSInteger minutes;
+@property (assign, nonatomic) NSInteger seconds;
+
+@property (assign, nonatomic) NSInteger pausedMinutes;
+@property (assign, nonatomic) NSInteger pausedSeconds;
+
 
 @end
 
@@ -21,9 +32,21 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        [self registerForNotifications];
     }
     return self;
+}
+
+- (void)registerForNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newRound:) name:NewRoundTimeNotificationName object:nil];
+}
+
+- (void)unregisterForNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NewRoundTimeNotificationName object:nil];
+}
+
+- (void)dealloc {
+    [self unregisterForNotifications];
 }
 
 - (void)viewDidLoad
@@ -35,16 +58,8 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-}
-
-+ (POTimerViewController *)sharedInstance {
-    static POTimerViewController *sharedInstance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedInstance = [[POTimerViewController alloc] init];
-        [sharedInstance updateLabel];
-    });
-    return sharedInstance;
+    [self updateLabel];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +70,7 @@
 
 - (IBAction)startTime:(id)sender {
     self.startTimeButton.enabled = NO;
+    self.pauseTimeButton.enabled = YES;
     [self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.active = YES;
     
@@ -99,7 +115,7 @@
             
             self.active = NO;
             
-            // todo: send notification
+            [[NSNotificationCenter defaultCenter] postNotificationName:RoundCompleteNotification object:nil userInfo:nil];
         }
         
     }
@@ -112,15 +128,15 @@
     
 }
 
-//- (void)newRound:(NSNotification *)notification {
-//    self.minutes = [notification.userInfo[UserInfoMinutesKey] integerValue];
-//    self.seconds = 0;
-//    
-//    // Re-enable the button
-//    self.button.enabled = YES;
-//    [self.button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    
-//    [self updateLabel];
-//}
+- (void)newRound:(NSNotification *)notification {
+    self.minutes = [notification.userInfo[UserInfoMinutesKey] integerValue];
+    self.seconds = 0;
+    
+    // Re-enable the button
+    self.startTimeButton.enabled = YES;
+    [self.startTimeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self updateLabel];
+}
 
 @end

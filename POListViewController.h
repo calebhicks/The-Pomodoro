@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+static NSString * const NewRoundTimeNotificationName = @"NewRoundTimeNotification";
+static NSString * const UserInfoMinutesKey = @"minutes";
+
 @interface POListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
