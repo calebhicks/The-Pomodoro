@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface POListViewController : UIViewController
+@interface POListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
