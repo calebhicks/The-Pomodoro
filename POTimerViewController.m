@@ -56,7 +56,7 @@
     
     self.title = @"Focus";
     
-    self.view.backgroundColor = [UIColor redColor];
+    //self.view.backgroundColor = [UIColor redColor];
     
     [self updateLabel];
     
@@ -91,8 +91,10 @@
     
     if (self.seconds < 10) {
         self.timeLabel.text = [NSString stringWithFormat:@"%d:0%d", self.minutes, self.seconds];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
     } else {
         self.timeLabel.text = [NSString stringWithFormat:@"%d:%d", self.minutes, self.seconds];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
     }
     
 }

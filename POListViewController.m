@@ -16,6 +16,8 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 @property (nonatomic, assign) NSInteger currentRound;
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) NSString *currentTime;
+
 @end
 
 @implementation POListViewController
@@ -33,6 +35,8 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 
 - (void)registerForNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endRound:) name:RoundCompleteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentRound:) name:@"CurrentTime" object:nil];
+
 }
 
 - (void)unregisterForNotifications {
@@ -71,12 +75,24 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateCurrentRound:(NSNotification *)notification{
+    NSLog(@"%@", notification.object);
+    self.currentTime = notification.object;
+    
+    NSArray *array = @[[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    [self.tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [[UITableViewCell alloc]init]; //[tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Round %d - %@ min", indexPath.row + 1, [[[self times] objectAtIndex:indexPath.row] stringValue]];
-
+    if (indexPath.row == 0){
+        cell.textLabel.text = [NSString stringWithFormat:@"Current round: %@", self.currentTime];
+    }else{
+        cell.textLabel.text = [NSString stringWithFormat:@"Round %d - %@ min", indexPath.row, [[[self times] objectAtIndex:indexPath.row-1] stringValue]];
+    }
     
     return cell;
     
@@ -84,12 +100,12 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [[self times] count];
+    return [[self times] count]+1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.currentRound = indexPath.row;
+    self.currentRound = indexPath.row+1;
     
     [self postMinutes];
     

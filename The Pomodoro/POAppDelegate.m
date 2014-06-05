@@ -17,16 +17,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     POListViewController *listViewController = [[POListViewController alloc]init];
-    listViewController.tabBarItem.title = @"Pomodoro";
-    listViewController.title = @"Pomodoro";
-    //historyViewController.tabBarItem.image = [UIImage];
+    listViewController.tabBarItem.title = @"Rounds";
+    listViewController.title = @"Rounds";
+    listViewController.tabBarItem.image = [UIImage imageNamed:@"pomodoro"];
     UINavigationController *listNav = [[UINavigationController alloc]initWithRootViewController:listViewController];
     
     
     POTimerViewController *timerViewController = [[POTimerViewController alloc]init];
     timerViewController.tabBarItem.title = @"Timer";
     timerViewController.title = @"Timer";
-    //timerViewController.tabBarItem.image = [UIImage];
+    timerViewController.tabBarItem.image = [UIImage imageNamed:@"timer"];
     UINavigationController *timerNav = [[UINavigationController alloc]initWithRootViewController:timerViewController];
     
     
