@@ -15,4 +15,6 @@ static NSString * const UserInfoMinutesKey = @"minutes";
 
 @interface POListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+- (void) showAlertView;
+
 @end

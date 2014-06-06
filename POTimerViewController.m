@@ -9,6 +9,9 @@
 #import "POTimerViewController.h"
 #import "POListViewController.h"
 
+static NSString * const CurrentMinutesKey = @"CurrentMinutes";
+static NSString * const CurrentSecondsKey = @"CurrentSeconds";
+
 @interface POTimerViewController ()
 
 @property (assign, nonatomic) BOOL active;
@@ -32,6 +35,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         [self registerForNotifications];
+        
     }
     return self;
 }
@@ -72,7 +76,33 @@
     self.active = YES;
     
     [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
+    
+    self.minutes = 1; //for testing purposes
+    
+    [self scheduleNotification];
+    
+    [self saveTimerInfo];
 
+}
+
+- (void) scheduleNotification{
+    
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    
+    if(notification){
+        notification.fireDate = [[NSDate date] dateByAddingTimeInterval:self.minutes*60];
+        notification.alertBody = @"Nice work. Your round has finished.";
+        notification.soundName = UILocalNotificationDefaultSoundName;
+        notification.repeatInterval = 0;
+        notification.applicationIconBadgeNumber = 0;
+        notification.userInfo = @{@"roundfinished": @"YES"};
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+    
+}
+
+- (void) cancelLocalNotifications{
+    [[UIApplication sharedApplication]cancelAllLocalNotifications];
 }
 
 - (void)setTimer:(NSInteger)minutes{
@@ -133,9 +163,49 @@
     
     // Re-enable the button
     self.startTimeButton.enabled = YES;
-    [self.startTimeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.startTimeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    
+    [self cancelLocalNotifications];
     
     [self updateLabel];
+}
+
+- (void)saveTimerInfo {
+    
+//    [[NSUserDefaults standardUserDefaults] setInteger:self.minutes forKey:CurrentMinutesKey];
+//    [[NSUserDefaults standardUserDefaults] setInteger:self.seconds forKey:CurrentSecondsKey];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSDate *finishTime = [[NSDate date] dateByAddingTimeInterval:self.minutes*60];
+    [[NSUserDefaults standardUserDefaults] setObject:finishTime forKey:@"EndTime"];
+    
+}
+
+- (void)loadUpdatedTimerInfo{
+//    NSInteger oldMinutes = [[NSUserDefaults standardUserDefaults] integerForKey:CurrentMinutesKey];
+//    NSInteger oldSeconds = [[NSUserDefaults standardUserDefaults] integerForKey:CurrentSecondsKey];
+//    
+
+    NSDate *finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
+    
+    NSTimeInterval timeDifferential = [[NSDate date]timeIntervalSinceDate:finishTime];
+    NSInteger differentialInSeconds = timeDifferential;
+    
+    
+    // subtract minutes
+    
+    if(differentialInSeconds > 60){
+        self.minutes -= differentialInSeconds/60;
+    }
+    
+    // subtract seconds
+    
+    self.seconds -= differentialInSeconds % 60;
+    
+    NSLog(@"%f", timeDifferential);
+    NSLog(@"%d", self.minutes);
+    NSLog(@"%d", self.seconds);
+
 }
 
 @end

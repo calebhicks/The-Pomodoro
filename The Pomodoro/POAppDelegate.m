@@ -10,28 +10,36 @@
 #import "POTimerViewController.h"
 #import "POListViewController.h"
 
+@interface POAppDelegate ();
+
+@property (strong, nonatomic) POListViewController *listViewController;
+@property (strong, nonatomic) POTimerViewController *timerViewController;
+
+@end
+
+
 @implementation POAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    POListViewController *listViewController = [[POListViewController alloc]init];
-    listViewController.tabBarItem.title = @"Rounds";
-    listViewController.title = @"Rounds";
-    listViewController.tabBarItem.image = [UIImage imageNamed:@"pomodoro"];
-    UINavigationController *listNav = [[UINavigationController alloc]initWithRootViewController:listViewController];
+    self.listViewController = [[POListViewController alloc]init];
+    self.listViewController.tabBarItem.title = @"Rounds";
+    self.listViewController.title = @"Rounds";
+    self.listViewController.tabBarItem.image = [UIImage imageNamed:@"pomodoro"];
+    UINavigationController *listNav = [[UINavigationController alloc]initWithRootViewController:self.listViewController];
     
     
-    POTimerViewController *timerViewController = [[POTimerViewController alloc]init];
-    timerViewController.tabBarItem.title = @"Timer";
-    timerViewController.title = @"Timer";
-    timerViewController.tabBarItem.image = [UIImage imageNamed:@"timer"];
-    UINavigationController *timerNav = [[UINavigationController alloc]initWithRootViewController:timerViewController];
+    self.timerViewController = [[POTimerViewController alloc]init];
+    self.timerViewController.tabBarItem.title = @"Timer";
+    self.timerViewController.title = @"Timer";
+    self.timerViewController.tabBarItem.image = [UIImage imageNamed:@"timer"];
+    UINavigationController *timerNav = [[UINavigationController alloc]initWithRootViewController:self.timerViewController];
     
     
     UITabBarController *tabBar = [[UITabBarController alloc]init];
-    tabBar.viewControllers = @[listNav, timerNav];
+    tabBar.viewControllers = @[timerNav, listNav]; //load timerNav first so listNav can have value set for time
     [self.window setRootViewController:tabBar];
 
     
@@ -44,17 +52,23 @@
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+    [self.timerViewController saveTimerInfo];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    [self.timerViewController loadUpdatedTimerInfo];
+
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -65,6 +79,17 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    
+    // display alert only if notification is of round finished
+    if( [notification.userInfo  isEqual: @{@"roundfinished": @"YES"}]){
+    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Nice work! Go for another round!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alertEndRound show];
+    }
+    
 }
 
 @end

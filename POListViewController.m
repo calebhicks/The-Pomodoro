@@ -11,6 +11,7 @@
 
 static NSString * const CurrentRoundKey = @"CurrentRound";
 
+
 @interface POListViewController () <UIAlertViewDelegate>
 
 @property (nonatomic, assign) NSInteger currentRound;
@@ -63,6 +64,8 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    self.currentTime = @"";
+    
     
     [self.view addSubview:self.tableView];
     
@@ -100,14 +103,16 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [[self times] count]+1;
+    return [[self times] count]+1; //plus one to allow for top cell
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.currentRound = indexPath.row+1;
-    
-    [self postMinutes];
+    if (indexPath.row != 0){ //if statement to avoid crash when user selects top cell
+        self.currentRound = indexPath.row-1; //minus one to allow for top cell
+        
+        [self postMinutes];
+    }
     
 }
 
@@ -131,11 +136,7 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [self postMinutes];
     
-    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Your round has finished, continue with next round?" delegate:self cancelButtonTitle:@"Not now" otherButtonTitles:@"Next Round", nil];
-    
-    [alertEndRound show];
-    
-    [self scheduleNotification];
+    [self showAlertView];
     
 }
 
@@ -143,26 +144,25 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     if(buttonIndex == 0){
         return;
     }else{
-        
+        return;
     }
 }
 
-- (void) scheduleNotification{
-    UILocalNotification *notification = [[UILocalNotification alloc]init];
-    notification.fireDate = [[NSDate date] dateByAddingTimeInterval:[self.currentTime integerValue]];
-    notification.alertBody = @"Your round has finished.";
-    notification.soundName = UILocalNotificationDefaultSoundName;
+- (void) showAlertView{
+    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Nice work! Go for another round!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     
-    
+    [alertEndRound show];
 }
 
 
 - (void)selectCurrentRound {
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.currentRound inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.currentRound+1 inSection:0];
     [self.tableView selectRowAtIndexPath:indexPath
                                 animated:NO
                           scrollPosition:UITableViewScrollPositionTop];
+    
+    [self postMinutes];
     
 }
 
