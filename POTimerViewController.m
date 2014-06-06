@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startTimeButton;
-@property (weak, nonatomic) IBOutlet UIButton *pauseTimeButton;
 
 @property (assign, nonatomic) NSInteger minutes;
 @property (assign, nonatomic) NSInteger seconds;
@@ -56,8 +55,6 @@
     
     self.title = @"Focus";
     
-    //self.view.backgroundColor = [UIColor redColor];
-    
     [self updateLabel];
     
 }
@@ -70,7 +67,7 @@
 
 - (IBAction)startTime:(id)sender {
     self.startTimeButton.enabled = NO;
-    self.pauseTimeButton.enabled = YES;
+    //self.pauseTimeButton.enabled = YES;
     [self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.active = YES;
     

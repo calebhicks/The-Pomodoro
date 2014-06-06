@@ -11,7 +11,7 @@
 
 static NSString * const CurrentRoundKey = @"CurrentRound";
 
-@interface POListViewController ()
+@interface POListViewController () <UIAlertViewDelegate>
 
 @property (nonatomic, assign) NSInteger currentRound;
 @property (nonatomic, strong) UITableView *tableView;
@@ -115,7 +115,6 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NewRoundTimeNotificationName object:nil userInfo:@{UserInfoMinutesKey: [self times][self.currentRound]}];
     
-    
 }
 
 - (NSArray *)times{
@@ -131,6 +130,30 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     [self selectCurrentRound];
     
     [self postMinutes];
+    
+    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Your round has finished, continue with next round?" delegate:self cancelButtonTitle:@"Not now" otherButtonTitles:@"Next Round", nil];
+    
+    [alertEndRound show];
+    
+    [self scheduleNotification];
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        return;
+    }else{
+        
+    }
+}
+
+- (void) scheduleNotification{
+    UILocalNotification *notification = [[UILocalNotification alloc]init];
+    notification.fireDate = [[NSDate date] dateByAddingTimeInterval:[self.currentTime integerValue]];
+    notification.alertBody = @"Your round has finished.";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    
+    
 }
 
 
