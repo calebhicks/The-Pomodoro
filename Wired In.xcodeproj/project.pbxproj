@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */; };
+		3C3AC78B1942B3C800BCBA6B /* POIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */; };
 		3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413961193EB90E00A4F262 /* POTimerViewController.m */; };
 		3C413964193EB90E00A4F262 /* POTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413962193EB90E00A4F262 /* POTimerViewController.xib */; };
 		3C413968193EB92E00A4F262 /* POListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413966193EB92E00A4F262 /* POListViewController.m */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C3AC7871942B3C800BCBA6B /* POIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIntroViewController.h; path = ../POIntroViewController.h; sourceTree = "<group>"; };
+		3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIntroViewController.m; path = ../POIntroViewController.m; sourceTree = "<group>"; };
+		3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POIntroViewController.xib; path = ../POIntroViewController.xib; sourceTree = "<group>"; };
 		3C413960193EB90E00A4F262 /* POTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POTimerViewController.h; path = ../POTimerViewController.h; sourceTree = "<group>"; };
 		3C413961193EB90E00A4F262 /* POTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POTimerViewController.m; path = ../POTimerViewController.m; sourceTree = "<group>"; };
 		3C413962193EB90E00A4F262 /* POTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POTimerViewController.xib; path = ../POTimerViewController.xib; sourceTree = "<group>"; };
@@ -87,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C3AC7811942B10100BCBA6B /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				3C3AC7871942B3C800BCBA6B /* POIntroViewController.h */,
+				3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */,
+				3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
 		3C413955193EAE6000A4F262 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +161,7 @@
 				3C6F3F9519400A0000CF6D20 /* POAppearance.m */,
 				3C413955193EAE6000A4F262 /* Timer */,
 				3C413956193EAE7900A4F262 /* List */,
+				3C3AC7811942B10100BCBA6B /* Intro */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
 				7141B2EC193DBDFD0084F9F1 /* Supporting Files */,
 			);
@@ -261,6 +277,7 @@
 				7141B2F0193DBDFD0084F9F1 /* InfoPlist.strings in Resources */,
 				7141B2F8193DBDFD0084F9F1 /* Images.xcassets in Resources */,
 				3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */,
+				3C3AC78B1942B3C800BCBA6B /* POIntroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */,
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,

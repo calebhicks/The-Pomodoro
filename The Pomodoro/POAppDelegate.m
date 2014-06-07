@@ -35,12 +35,13 @@
     self.timerViewController.tabBarItem.title = @"Timer";
     self.timerViewController.title = @"Timer";
     self.timerViewController.tabBarItem.image = [UIImage imageNamed:@"watch"];
+    [self.timerViewController loadView];
     //[self.timerViewController setInitialTimerValue];
     UINavigationController *timerNav = [[UINavigationController alloc]initWithRootViewController:self.timerViewController];
     
     
     UITabBarController *tabBar = [[UITabBarController alloc]init];
-    tabBar.viewControllers = @[timerNav, listNav]; //load timerNav first so listNav can have value set for time
+    tabBar.viewControllers = @[listNav, timerNav]; //load timerNav first so listNav can have value set for time
     [self.window setRootViewController:tabBar];
 
     

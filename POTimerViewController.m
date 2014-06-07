@@ -70,15 +70,24 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
 }
 
 - (IBAction)startTime:(id)sender {
-    self.startTimeButton.enabled = NO;
-    [self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    self.active = YES;
     
-    [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
+    if(self.active == NO){
+        [self.startTimeButton setTitle:@"Pause" forState:UIControlStateNormal];
+        //[self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        self.active = YES;
+        
+        [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
+        
+        [self scheduleNotification];
+        
+        [self saveTimerInfo];
+    }else { //if (self.active == YES){
+        self.active = NO;
+        [self.startTimeButton setTitle:@"Start" forState:UIControlStateNormal];
+        //self.startTimeButton.titleLabel.text = @"Start";
+        [self cancelLocalNotifications];
+    }
     
-    [self scheduleNotification];
-    
-    [self saveTimerInfo];
 
 }
 
@@ -148,7 +157,7 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     
     [self updateLabel];
     
-    if (self.active) {
+    if (self.active == YES) {
         [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
     }
     
