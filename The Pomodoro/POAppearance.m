@@ -12,8 +12,8 @@
 
 +(void)load{
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-    [[UITabBar appearance] setTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:.11 green:.38 blue:.56 alpha:1]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:.11 green:.38 blue:.56 alpha:1]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName: [UIColor whiteColor],

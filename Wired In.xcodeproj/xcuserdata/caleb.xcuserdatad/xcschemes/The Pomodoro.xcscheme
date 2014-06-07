@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7141B2E1193DBDFD0084F9F1"
-               BuildableName = "The Pomodoro.app"
-               BlueprintName = "The Pomodoro"
-               ReferencedContainer = "container:The Pomodoro.xcodeproj">
+               BuildableName = "Wired In.app"
+               BlueprintName = "Wired In"
+               ReferencedContainer = "container:Wired In.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7141B2FC193DBDFE0084F9F1"
-               BuildableName = "The PomodoroTests.xctest"
-               BlueprintName = "The PomodoroTests"
-               ReferencedContainer = "container:The Pomodoro.xcodeproj">
+               BuildableName = "Wired InTests.xctest"
+               BlueprintName = "Wired InTests"
+               ReferencedContainer = "container:Wired In.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7141B2E1193DBDFD0084F9F1"
-            BuildableName = "The Pomodoro.app"
-            BlueprintName = "The Pomodoro"
-            ReferencedContainer = "container:The Pomodoro.xcodeproj">
+            BuildableName = "Wired In.app"
+            BlueprintName = "Wired In"
+            ReferencedContainer = "container:Wired In.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7141B2E1193DBDFD0084F9F1"
-            BuildableName = "The Pomodoro.app"
-            BlueprintName = "The Pomodoro"
-            ReferencedContainer = "container:The Pomodoro.xcodeproj">
+            BuildableName = "Wired In.app"
+            BlueprintName = "Wired In"
+            ReferencedContainer = "container:Wired In.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7141B2E1193DBDFD0084F9F1"
-            BuildableName = "The Pomodoro.app"
-            BlueprintName = "The Pomodoro"
-            ReferencedContainer = "container:The Pomodoro.xcodeproj">
+            BuildableName = "Wired In.app"
+            BlueprintName = "Wired In"
+            ReferencedContainer = "container:Wired In.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

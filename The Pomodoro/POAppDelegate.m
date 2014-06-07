@@ -27,14 +27,15 @@
     self.listViewController = [[POListViewController alloc]init];
     self.listViewController.tabBarItem.title = @"Rounds";
     self.listViewController.title = @"Rounds";
-    self.listViewController.tabBarItem.image = [UIImage imageNamed:@"pomodoro"];
+    self.listViewController.tabBarItem.image = [UIImage imageNamed:@"wiredin"];
     UINavigationController *listNav = [[UINavigationController alloc]initWithRootViewController:self.listViewController];
     
     
     self.timerViewController = [[POTimerViewController alloc]init];
     self.timerViewController.tabBarItem.title = @"Timer";
     self.timerViewController.title = @"Timer";
-    self.timerViewController.tabBarItem.image = [UIImage imageNamed:@"timer"];
+    self.timerViewController.tabBarItem.image = [UIImage imageNamed:@"watch"];
+    //[self.timerViewController setInitialTimerValue];
     UINavigationController *timerNav = [[UINavigationController alloc]initWithRootViewController:self.timerViewController];
     
     
@@ -67,6 +68,7 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     
+    [self.listViewController postMinutes];
     [self.timerViewController loadUpdatedTimerInfo];
 
 }

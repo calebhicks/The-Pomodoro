@@ -71,13 +71,10 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
 
 - (IBAction)startTime:(id)sender {
     self.startTimeButton.enabled = NO;
-    //self.pauseTimeButton.enabled = YES;
     [self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.active = YES;
     
     [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
-    
-    self.minutes = 1; //for testing purposes
     
     [self scheduleNotification];
     
@@ -163,7 +160,7 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     
     // Re-enable the button
     self.startTimeButton.enabled = YES;
-    [self.startTimeButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.startTimeButton setTitleColor:[UIColor colorWithRed:.11 green:.38 blue:.56 alpha:1] forState:UIControlStateNormal];
     
     [self cancelLocalNotifications];
     
@@ -206,6 +203,13 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     NSLog(@"%d", self.minutes);
     NSLog(@"%d", self.seconds);
 
+}
+
+- (void)setInitialTimerValue{
+    
+    self.minutes = 25;
+    self.seconds = 0;
+    
 }
 
 @end

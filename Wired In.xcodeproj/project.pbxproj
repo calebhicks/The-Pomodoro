@@ -45,20 +45,20 @@
 		3C413967193EB92E00A4F262 /* POListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POListViewController.xib; path = ../POListViewController.xib; sourceTree = "<group>"; };
 		3C6F3F9419400A0000CF6D20 /* POAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAppearance.h; sourceTree = "<group>"; };
 		3C6F3F9519400A0000CF6D20 /* POAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAppearance.m; sourceTree = "<group>"; };
-		7141B2E2193DBDFD0084F9F1 /* The Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Pomodoro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7141B2E2193DBDFD0084F9F1 /* Wired In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wired In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7141B2E5193DBDFD0084F9F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7141B2E7193DBDFD0084F9F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7141B2E9193DBDFD0084F9F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7141B2ED193DBDFD0084F9F1 /* The Pomodoro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The Pomodoro-Info.plist"; sourceTree = "<group>"; };
+		7141B2ED193DBDFD0084F9F1 /* Wired In-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wired In-Info.plist"; sourceTree = "<group>"; };
 		7141B2EF193DBDFD0084F9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7141B2F1193DBDFD0084F9F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7141B2F3193DBDFD0084F9F1 /* The Pomodoro-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Pomodoro-Prefix.pch"; sourceTree = "<group>"; };
+		7141B2F3193DBDFD0084F9F1 /* Wired In-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wired In-Prefix.pch"; sourceTree = "<group>"; };
 		7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POAppDelegate.h; sourceTree = "<group>"; };
 		7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POAppDelegate.m; sourceTree = "<group>"; };
 		7141B2F7193DBDFD0084F9F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7141B2FD193DBDFE0084F9F1 /* The PomodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The PomodoroTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7141B2FD193DBDFE0084F9F1 /* Wired InTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wired InTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7141B2FE193DBDFE0084F9F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7141B306193DBDFE0084F9F1 /* The PomodoroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "The PomodoroTests-Info.plist"; sourceTree = "<group>"; };
+		7141B306193DBDFE0084F9F1 /* Wired InTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wired InTests-Info.plist"; sourceTree = "<group>"; };
 		7141B308193DBDFE0084F9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7141B30A193DBDFE0084F9F1 /* The_PomodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = The_PomodoroTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,8 +120,8 @@
 		7141B2E3193DBDFD0084F9F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7141B2E2193DBDFD0084F9F1 /* The Pomodoro.app */,
-				7141B2FD193DBDFE0084F9F1 /* The PomodoroTests.xctest */,
+				7141B2E2193DBDFD0084F9F1 /* Wired In.app */,
+				7141B2FD193DBDFE0084F9F1 /* Wired InTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,10 +155,10 @@
 		7141B2EC193DBDFD0084F9F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7141B2ED193DBDFD0084F9F1 /* The Pomodoro-Info.plist */,
+				7141B2ED193DBDFD0084F9F1 /* Wired In-Info.plist */,
 				7141B2EE193DBDFD0084F9F1 /* InfoPlist.strings */,
 				7141B2F1193DBDFD0084F9F1 /* main.m */,
-				7141B2F3193DBDFD0084F9F1 /* The Pomodoro-Prefix.pch */,
+				7141B2F3193DBDFD0084F9F1 /* Wired In-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -175,7 +175,7 @@
 		7141B305193DBDFE0084F9F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7141B306193DBDFE0084F9F1 /* The PomodoroTests-Info.plist */,
+				7141B306193DBDFE0084F9F1 /* Wired InTests-Info.plist */,
 				7141B307193DBDFE0084F9F1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -184,9 +184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7141B2E1193DBDFD0084F9F1 /* The Pomodoro */ = {
+		7141B2E1193DBDFD0084F9F1 /* Wired In */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7141B30E193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "The Pomodoro" */;
+			buildConfigurationList = 7141B30E193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "Wired In" */;
 			buildPhases = (
 				7141B2DE193DBDFD0084F9F1 /* Sources */,
 				7141B2DF193DBDFD0084F9F1 /* Frameworks */,
@@ -196,14 +196,14 @@
 			);
 			dependencies = (
 			);
-			name = "The Pomodoro";
+			name = "Wired In";
 			productName = "The Pomodoro";
-			productReference = 7141B2E2193DBDFD0084F9F1 /* The Pomodoro.app */;
+			productReference = 7141B2E2193DBDFD0084F9F1 /* Wired In.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7141B2FC193DBDFE0084F9F1 /* The PomodoroTests */ = {
+		7141B2FC193DBDFE0084F9F1 /* Wired InTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7141B311193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "The PomodoroTests" */;
+			buildConfigurationList = 7141B311193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "Wired InTests" */;
 			buildPhases = (
 				7141B2F9193DBDFE0084F9F1 /* Sources */,
 				7141B2FA193DBDFE0084F9F1 /* Frameworks */,
@@ -214,9 +214,9 @@
 			dependencies = (
 				7141B303193DBDFE0084F9F1 /* PBXTargetDependency */,
 			);
-			name = "The PomodoroTests";
+			name = "Wired InTests";
 			productName = "The PomodoroTests";
-			productReference = 7141B2FD193DBDFE0084F9F1 /* The PomodoroTests.xctest */;
+			productReference = 7141B2FD193DBDFE0084F9F1 /* Wired InTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7141B2DD193DBDFD0084F9F1 /* Build configuration list for PBXProject "The Pomodoro" */;
+			buildConfigurationList = 7141B2DD193DBDFD0084F9F1 /* Build configuration list for PBXProject "Wired In" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -246,8 +246,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7141B2E1193DBDFD0084F9F1 /* The Pomodoro */,
-				7141B2FC193DBDFE0084F9F1 /* The PomodoroTests */,
+				7141B2E1193DBDFD0084F9F1 /* Wired In */,
+				7141B2FC193DBDFE0084F9F1 /* Wired InTests */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +300,7 @@
 /* Begin PBXTargetDependency section */
 		7141B303193DBDFE0084F9F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7141B2E1193DBDFD0084F9F1 /* The Pomodoro */;
+			target = 7141B2E1193DBDFD0084F9F1 /* Wired In */;
 			targetProxy = 7141B302193DBDFE0084F9F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -401,9 +401,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "The Pomodoro/The Pomodoro-Prefix.pch";
-				INFOPLIST_FILE = "The Pomodoro/The Pomodoro-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "The Pomodoro/Wired In-Prefix.pch";
+				INFOPLIST_FILE = "The Pomodoro/Wired In-Info.plist";
+				PRODUCT_NAME = "Wired In";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -414,9 +414,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "The Pomodoro/The Pomodoro-Prefix.pch";
-				INFOPLIST_FILE = "The Pomodoro/The Pomodoro-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "The Pomodoro/Wired In-Prefix.pch";
+				INFOPLIST_FILE = "The Pomodoro/Wired In-Info.plist";
+				PRODUCT_NAME = "Wired In";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -436,8 +436,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "The PomodoroTests/The PomodoroTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "The PomodoroTests/Wired InTests-Info.plist";
+				PRODUCT_NAME = "Wired InTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -454,8 +454,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Pomodoro/The Pomodoro-Prefix.pch";
-				INFOPLIST_FILE = "The PomodoroTests/The PomodoroTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "The PomodoroTests/Wired InTests-Info.plist";
+				PRODUCT_NAME = "Wired InTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -464,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7141B2DD193DBDFD0084F9F1 /* Build configuration list for PBXProject "The Pomodoro" */ = {
+		7141B2DD193DBDFD0084F9F1 /* Build configuration list for PBXProject "Wired In" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7141B30C193DBDFE0084F9F1 /* Debug */,
@@ -473,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7141B30E193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "The Pomodoro" */ = {
+		7141B30E193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "Wired In" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7141B30F193DBDFE0084F9F1 /* Debug */,
@@ -482,7 +482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7141B311193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "The PomodoroTests" */ = {
+		7141B311193DBDFE0084F9F1 /* Build configuration list for PBXNativeTarget "Wired InTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7141B312193DBDFE0084F9F1 /* Debug */,

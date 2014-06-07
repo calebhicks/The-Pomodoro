@@ -70,6 +70,7 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     [self.view addSubview:self.tableView];
     
     [self selectCurrentRound];
+    [self postMinutes];
 }
 
 - (void)didReceiveMemoryWarning
