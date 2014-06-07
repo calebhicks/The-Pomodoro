@@ -15,6 +15,7 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:.11 green:.38 blue:.56 alpha:1]];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:.11 green:.38 blue:.56 alpha:1]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
                                                            NSFontAttributeName: [UIFont fontWithName:@"Avenir-Light" size:20]

@@ -11,6 +11,8 @@
 
 @interface TTProjectController : NSObject
 
+@property (strong, nonatomic, readonly) NSArray *projects;
+
 + (TTProjectController *)sharedInstance;
 
 -(void) addProject:(TTProject *)project;

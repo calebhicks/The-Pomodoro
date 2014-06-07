@@ -8,6 +8,8 @@
 
 #import "TTListTableViewController.h"
 #import "TTListTableViewDatasource.h"
+#import "TTProjectController.h"
+#import "TTProjectDetailViewController.h"
 
 @interface TTListTableViewController () <UITableViewDelegate>
 
@@ -37,8 +39,23 @@
     self.tableView.dataSource = self.dataSource;
     [self registerTableView:self.tableView];
     
+    UIBarButtonItem *addEntryButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newEntry)];
+    
+    self.navigationItem.rightBarButtonItem = addEntryButton;
+    
     
     [self.view addSubview:self.tableView];
+}
+
+- (void)newEntry{
+    TTProject *project = [TTProject new];
+    [[TTProjectController sharedInstance] addProject:project];
+    
+    TTProjectDetailViewController *projectView = [[TTProjectDetailViewController alloc]init];
+    
+    //projectView.project = project;
+    
+    [self.navigationController pushViewController:projectView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
