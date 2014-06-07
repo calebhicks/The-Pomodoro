@@ -45,7 +45,7 @@
     self.timeTrackListViewController = [[TTListTableViewController alloc]init];
     self.timeTrackListViewController.tabBarItem.title = @"Projects";
     self.timeTrackListViewController.title = @"Projects";
-    self.timeTrackListViewController.tabBarItem.image = [UIImage imageNamed:@"watch"];
+    self.timeTrackListViewController.tabBarItem.image = [UIImage imageNamed:@"curriculum"];
     UINavigationController *timeTrackNav = [[UINavigationController alloc]initWithRootViewController:self.timeTrackListViewController];
     
     
