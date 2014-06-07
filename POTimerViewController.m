@@ -205,6 +205,8 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     NSLog(@"The time differential is %f", timeDifferential);
     NSLog(@"%d", self.minutes);
     NSLog(@"%d", self.seconds);
+    
+    [self updateLabel];
 
 }
 

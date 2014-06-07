@@ -245,6 +245,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DevMountain;
 				TargetAttributes = {
+					7141B2E1193DBDFD0084F9F1 = {
+						DevelopmentTeam = 969L5L5G9L;
+					};
 					7141B2FC193DBDFE0084F9F1 = {
 						TestTargetID = 7141B2E1193DBDFD0084F9F1;
 					};
@@ -418,10 +421,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Pomodoro/Wired In-Prefix.pch";
 				INFOPLIST_FILE = "The Pomodoro/Wired In-Info.plist";
 				PRODUCT_NAME = "Wired In";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -431,10 +437,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "The Pomodoro/Wired In-Prefix.pch";
 				INFOPLIST_FILE = "The Pomodoro/Wired In-Info.plist";
 				PRODUCT_NAME = "Wired In";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
