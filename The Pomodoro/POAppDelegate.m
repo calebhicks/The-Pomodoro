@@ -9,11 +9,14 @@
 #import "POAppDelegate.h"
 #import "POTimerViewController.h"
 #import "POListViewController.h"
+#import "TTListTableViewController.h"
+
 
 @interface POAppDelegate ();
 
 @property (strong, nonatomic) POListViewController *listViewController;
 @property (strong, nonatomic) POTimerViewController *timerViewController;
+@property (strong, nonatomic) TTListTableViewController *timeTrackListViewController;
 
 @end
 
@@ -39,9 +42,15 @@
     //[self.timerViewController setInitialTimerValue];
     UINavigationController *timerNav = [[UINavigationController alloc]initWithRootViewController:self.timerViewController];
     
+    self.timeTrackListViewController = [[TTListTableViewController alloc]init];
+    self.timeTrackListViewController.tabBarItem.title = @"Projects";
+    self.timeTrackListViewController.title = @"Projects";
+    self.timeTrackListViewController.tabBarItem.image = [UIImage imageNamed:@"watch"];
+    UINavigationController *timeTrackNav = [[UINavigationController alloc]initWithRootViewController:self.timeTrackListViewController];
+    
     
     UITabBarController *tabBar = [[UITabBarController alloc]init];
-    tabBar.viewControllers = @[listNav, timerNav]; //load timerNav first so listNav can have value set for time
+    tabBar.viewControllers = @[listNav, timerNav, timeTrackNav]; //load timerNav first so listNav can have value set for time
     [self.window setRootViewController:tabBar];
 
     
