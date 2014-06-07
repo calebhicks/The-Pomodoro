@@ -73,18 +73,15 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     
     if(self.active == NO){
         [self.startTimeButton setTitle:@"Pause" forState:UIControlStateNormal];
-        //[self.startTimeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.active = YES;
         
         [self performSelector:@selector(decreaseSecond) withObject:nil afterDelay:1.0];
-        
         [self scheduleNotification];
-        
         [self saveTimerInfo];
-    }else { //if (self.active == YES){
+        
+    }else if (self.active == YES){
         self.active = NO;
         [self.startTimeButton setTitle:@"Start" forState:UIControlStateNormal];
-        //self.startTimeButton.titleLabel.text = @"Start";
         [self cancelLocalNotifications];
     }
     
@@ -96,7 +93,7 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     UILocalNotification *notification = [[UILocalNotification alloc]init];
     
     if(notification){
-        notification.fireDate = [[NSDate date] dateByAddingTimeInterval:self.minutes*60];
+        notification.fireDate = [[NSDate date] dateByAddingTimeInterval:self.minutes*60+self.seconds];
         notification.alertBody = @"Nice work. Your round has finished.";
         notification.soundName = UILocalNotificationDefaultSoundName;
         notification.repeatInterval = 0;
@@ -128,6 +125,12 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     } else {
         self.timeLabel.text = [NSString stringWithFormat:@"%d:%d", self.minutes, self.seconds];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
+    }
+    
+    if (self.active == YES){
+        [self.startTimeButton setTitle:@"Pause" forState:UIControlStateNormal];
+    }else if (self.active == NO){
+        [self.startTimeButton setTitle:@"Start" forState:UIControlStateNormal];
     }
     
 }
@@ -167,10 +170,6 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     self.minutes = [notification.userInfo[UserInfoMinutesKey] integerValue];
     self.seconds = 0;
     
-    // Re-enable the button
-    self.startTimeButton.enabled = YES;
-    [self.startTimeButton setTitleColor:[UIColor colorWithRed:.11 green:.38 blue:.56 alpha:1] forState:UIControlStateNormal];
-    
     [self cancelLocalNotifications];
     
     [self updateLabel];
@@ -178,47 +177,35 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
 
 - (void)saveTimerInfo {
     
-//    [[NSUserDefaults standardUserDefaults] setInteger:self.minutes forKey:CurrentMinutesKey];
-//    [[NSUserDefaults standardUserDefaults] setInteger:self.seconds forKey:CurrentSecondsKey];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    NSDate *finishTime = [[NSDate date] dateByAddingTimeInterval:self.minutes*60];
+    NSDate *finishTime = [[NSDate date] dateByAddingTimeInterval:self.minutes*60+self.seconds];
     [[NSUserDefaults standardUserDefaults] setObject:finishTime forKey:@"EndTime"];
+    
+    NSLog(@"%@", finishTime);
     
 }
 
 - (void)loadUpdatedTimerInfo{
-//    NSInteger oldMinutes = [[NSUserDefaults standardUserDefaults] integerForKey:CurrentMinutesKey];
-//    NSInteger oldSeconds = [[NSUserDefaults standardUserDefaults] integerForKey:CurrentSecondsKey];
-//    
 
     NSDate *finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
     
     NSTimeInterval timeDifferential = [[NSDate date]timeIntervalSinceDate:finishTime];
-    NSInteger differentialInSeconds = timeDifferential;
+    NSInteger differentialInSeconds = timeDifferential*-1;
     
     
-    // subtract minutes
+    // set minutes
     
     if(differentialInSeconds > 60){
-        self.minutes -= differentialInSeconds/60;
+        self.minutes = floor(differentialInSeconds/60);
     }
     
-    // subtract seconds
+    // set seconds
     
-    self.seconds -= differentialInSeconds % 60;
+    self.seconds = differentialInSeconds % 60;
     
-    NSLog(@"%f", timeDifferential);
+    NSLog(@"The time differential is %f", timeDifferential);
     NSLog(@"%d", self.minutes);
     NSLog(@"%d", self.seconds);
 
-}
-
-- (void)setInitialTimerValue{
-    
-    self.minutes = 25;
-    self.seconds = 0;
-    
 }
 
 @end

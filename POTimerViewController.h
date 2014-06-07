@@ -17,6 +17,5 @@ static NSString * const RoundCompleteNotification = @"RoundCompleteNotification"
 - (void)setTimer:(NSInteger)minutes;
 - (void)saveTimerInfo;
 - (void)loadUpdatedTimerInfo;
-- (void)setInitialTimerValue;
 
 @end
