@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TTWorkPeriod.h"
+#import "TTProjectController.h"
 
 @interface TTProject : NSObject
 
@@ -15,8 +17,14 @@
 @property (strong, nonatomic) NSArray *workPeriods;
 @property (strong, nonatomic) NSDate *dateCreated;
 
+@property (strong, nonatomic) TTWorkPeriod *currentWorkPeriod;
+
 - (NSDictionary *)projectDictionary;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+
+- (void)addWorkPeriod:(TTWorkPeriod *)workPeriod toProject:(TTProject *)project;
+- (void)startNewWorkPeriod;
+- (void)endCurrentWorkPeriod;
 
 
 @end

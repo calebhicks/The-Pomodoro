@@ -16,8 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *workPeriodTableView;
 
-@property (strong, nonatomic) TTWorkPeriod *currentWorkPeriod;
-
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
@@ -116,7 +114,6 @@
 }
 
 - (IBAction)startButton:(id)sender {
-    NSLog(@"testing");
     
     [[[self.toolbar items] objectAtIndex:0] setEnabled:NO];
     [[[self.toolbar items] objectAtIndex:2] setEnabled:NO];
@@ -125,10 +122,12 @@
     
     [self startCurrentWorkPeriod];
     
+    [self.workPeriodTableView reloadData];
+
+    
 }
 
 - (IBAction)finishButton:(id)sender {
-    NSLog(@"testing");
     
     [[[self.toolbar items] objectAtIndex:0] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:2] setEnabled:NO];
@@ -142,39 +141,26 @@
 }
 
 - (IBAction)reportButton:(id)sender {
-    NSLog(@"testing");
 
+    // add e-mail sheet to send current project work periods
+    
 }
 
 - (void) createNewWorkPeriod{
-    TTWorkPeriod *workPeriod = [TTWorkPeriod new];
-    workPeriod.startTime = [NSDate date];
-    workPeriod.periodTitle = @"work period";
-    workPeriod.description = @" ";
-    workPeriod.finishTime = [NSDate date];
-    
-    self.currentWorkPeriod = workPeriod;
-    
-    [[TTProjectController sharedInstance] addWorkPeriod:self.currentWorkPeriod toProject:self.project];
-    [[TTProjectController sharedInstance]synchronize];
-    
-    [self startButton];
+
     
 }
 
 - (void) startCurrentWorkPeriod{
-    self.currentWorkPeriod.startTime = [NSDate date];
+    [self.project addWorkPeriod:self.project.currentWorkPeriod toProject:self.project];
     
-    [[TTProjectController sharedInstance]synchronize];
-
+    [self.workPeriodTableView reloadData];
 }
 
 - (void) endCurrentWorkPeriod{
-    self.currentWorkPeriod.finishTime = [NSDate date];
+    [self.project endCurrentWorkPeriod];
     
-    NSTimeInterval timeDifferential = [[NSDate date]timeIntervalSinceDate:self.currentWorkPeriod.startTime];
-    
-   self.currentWorkPeriod.duration = timeDifferential;
+    [self.workPeriodTableView reloadData];
 }
 
 @end

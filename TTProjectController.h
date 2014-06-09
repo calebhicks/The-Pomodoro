@@ -14,13 +14,11 @@
 
 @property (strong, nonatomic, readonly) NSArray *projects;
 
-+ (TTProjectController *)sharedInstance;
++(TTProjectController *)sharedInstance;
 
--(void) addProject:(TTProject *)project;
+-(void)addProject:(TTProject *)project;
 
--(void) removeProject:(TTProject *)project;
-
-- (void)addWorkPeriod:(TTWorkPeriod *)workPeriod toProject:(TTProject *)project;
+-(void)removeProject:(TTProject *)project;
 
 -(void) loadFromDefaults;
 

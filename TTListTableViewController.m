@@ -62,7 +62,6 @@
 
 - (void)newProject{
     TTProject *project = [TTProject new];
-    project.projectTitle = @"New Project Title";
     project.dateCreated = [NSDate date];
     
     [[TTProjectController sharedInstance] addProject:project];

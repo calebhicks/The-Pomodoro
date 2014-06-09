@@ -7,13 +7,11 @@
 //
 
 #import "TTProject.h"
-#import "TTWorkPeriod.h"
 
 static NSString * const titleKey = @"title";
 static NSString * const descriptionKey = @"description";
 static NSString * const periodsKey = @"periods";
 static NSString * const createdKey = @"created";
-
 
 @implementation TTProject
 
@@ -55,6 +53,31 @@ static NSString * const createdKey = @"created";
         self.dateCreated = dictionary[createdKey];
     }
     return self;
+}
+
+- (void)addWorkPeriod:(TTWorkPeriod *)workPeriod toProject:(TTProject *)project{
+    
+    NSMutableArray *mutableWorkPeriods = [NSMutableArray arrayWithArray:project.workPeriods];
+    [mutableWorkPeriods addObject:workPeriod];
+    project.workPeriods = mutableWorkPeriods;
+}
+
+- (void)startNewWorkPeriod{
+    TTWorkPeriod *workPeriod = [TTWorkPeriod new];
+    workPeriod.startTime = [NSDate date];
+    workPeriod.periodTitle = @"work period";
+    workPeriod.description = @" ";
+    
+    self.currentWorkPeriod = workPeriod;
+    
+    [self addWorkPeriod:self.currentWorkPeriod toProject:self];
+    [[TTProjectController sharedInstance]synchronize];
+    
+}
+
+- (void)endCurrentWorkPeriod{
+    self.currentWorkPeriod.finishTime = [NSDate date];
+    [[TTProjectController sharedInstance]synchronize];
 }
 
 @end
