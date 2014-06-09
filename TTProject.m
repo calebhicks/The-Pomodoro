@@ -7,6 +7,7 @@
 //
 
 #import "TTProject.h"
+#import "TTWorkPeriod.h"
 
 static NSString * const titleKey = @"title";
 static NSString * const descriptionKey = @"description";
@@ -29,8 +30,12 @@ static NSString * const createdKey = @"created";
     }
     
     if (self.workPeriods){
-        [entryDictionary setObject:self.workPeriods forKey:periodsKey];
         
+        NSMutableArray *periods = [NSMutableArray new];
+        for (TTWorkPeriod *period in self.workPeriods) {
+            [periods addObject:[period workPeriodDictionary]];
+        }
+        [entryDictionary setObject:periods forKey:periodsKey];
     }
     
     if (self.dateCreated){
