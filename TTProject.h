@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "TTWorkPeriod.h"
-#import "TTProjectController.h"
 
 @interface TTProject : NSObject
 

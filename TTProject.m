@@ -7,6 +7,7 @@
 //
 
 #import "TTProject.h"
+#import "TTProjectController.h"
 
 static NSString * const titleKey = @"title";
 static NSString * const descriptionKey = @"description";

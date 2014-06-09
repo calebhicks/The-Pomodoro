@@ -74,14 +74,14 @@
     [endDateFormatter setTimeStyle:NSDateFormatterShortStyle];
     [endDateFormatter setDateStyle:NSDateFormatterNoStyle];
     
-    if (self.currentWorkPeriod.startTime && self.currentWorkPeriod.finishTime) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", [startDateFormatter stringFromDate:self.currentWorkPeriod.startTime], [endDateFormatter stringFromDate:self.currentWorkPeriod.finishTime]];
+    if (self.project.currentWorkPeriod.startTime && self.project.currentWorkPeriod.finishTime) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", [startDateFormatter stringFromDate:self.project.currentWorkPeriod.startTime], [endDateFormatter stringFromDate:self.project.currentWorkPeriod.finishTime]];
     } else{
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ - running", [startDateFormatter stringFromDate:self.currentWorkPeriod.startTime]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - running", [startDateFormatter stringFromDate:self.project.currentWorkPeriod.startTime]];
     }
     
-    if(self.currentWorkPeriod.duration){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.currentWorkPeriod.duration];
+    if(self.project.currentWorkPeriod.duration){
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.project.currentWorkPeriod.duration];
     }
     
     return cell;

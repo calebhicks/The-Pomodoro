@@ -49,7 +49,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [[TTProjectController sharedInstance] synchronize];
+    //[[TTProjectController sharedInstance] synchronize];
     [self.tableView reloadData];
 }
 
