@@ -14,6 +14,9 @@
 @property (strong, nonatomic) NSDate *startTime;
 @property (strong, nonatomic) NSDate *finishTime;
 @property (strong, nonatomic) NSString *description;
-@property (strong, nonatomic) NSDate *duration;
+@property (assign, nonatomic) NSTimeInterval duration;
+
+- (NSDictionary *)workPeriodDictionary;
+- (id)initWithDictionary:(NSDictionary *)dictionary;
 
 @end

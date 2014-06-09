@@ -11,6 +11,7 @@
 @interface TTProject : NSObject
 
 @property (strong, nonatomic) NSString *projectTitle;
+@property (strong, nonatomic) NSString *projectDescription;
 @property (strong, nonatomic) NSArray *workPeriods;
 @property (strong, nonatomic) NSDate *dateCreated;
 

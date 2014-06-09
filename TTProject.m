@@ -9,6 +9,7 @@
 #import "TTProject.h"
 
 static NSString * const titleKey = @"title";
+static NSString * const descriptionKey = @"description";
 static NSString * const periodsKey = @"periods";
 static NSString * const createdKey = @"created";
 
@@ -23,8 +24,12 @@ static NSString * const createdKey = @"created";
         [entryDictionary setValue:self.projectTitle forKeyPath:titleKey];
     }
     
+    if (self.projectDescription) {
+        [entryDictionary setValue:self.projectDescription forKeyPath:descriptionKey];
+    }
+    
     if (self.workPeriods){
-        [entryDictionary setValue:self.workPeriods forKeyPath:periodsKey];
+        [entryDictionary setObject:self.workPeriods forKey:periodsKey];
         
     }
     
@@ -40,6 +45,7 @@ static NSString * const createdKey = @"created";
     self = [super init];
     if (self) {
         self.projectTitle = dictionary[titleKey];
+        self.projectDescription = dictionary[descriptionKey];
         self.workPeriods = dictionary[periodsKey];
         self.dateCreated = dictionary[createdKey];
     }

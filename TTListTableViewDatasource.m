@@ -17,10 +17,20 @@
 @implementation TTListTableViewDatasource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     
     TTProject *project = [TTProjectController sharedInstance].projects[indexPath.row];
     cell.textLabel.text = project.projectTitle;
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    if (project.projectDescription) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", project.projectDescription];
+    } else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Project Created: %@", [dateFormatter stringFromDate:project.dateCreated]];
+    }
     return cell;
 }
 

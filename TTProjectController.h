@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TTProject.h"
+#import "TTWorkPeriod.h"
 
 @interface TTProjectController : NSObject
 
@@ -18,6 +19,8 @@
 -(void) addProject:(TTProject *)project;
 
 -(void) removeProject:(TTProject *)project;
+
+- (void)addWorkPeriod:(TTWorkPeriod *)workPeriod toProject:(TTProject *)project;
 
 -(void) loadFromDefaults;
 

@@ -37,9 +37,10 @@
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     self.dataSource = [[TTListTableViewDatasource alloc]init];
     self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self;
     [self registerTableView:self.tableView];
     
-    UIBarButtonItem *addEntryButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newEntry)];
+    UIBarButtonItem *addEntryButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newProject)];
     
     self.navigationItem.rightBarButtonItem = addEntryButton;
     
@@ -47,16 +48,11 @@
     [self.view addSubview:self.tableView];
 }
 
-- (void)newEntry{
-    TTProject *project = [TTProject new];
-    [[TTProjectController sharedInstance] addProject:project];
-    
-    TTProjectDetailViewController *projectView = [[TTProjectDetailViewController alloc]init];
-    
-    //projectView.project = project;
-    
-    [self.navigationController pushViewController:projectView animated:YES];
+- (void)viewWillAppear:(BOOL)animated{
+    [[TTProjectController sharedInstance] synchronize];
+    [self.tableView reloadData];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -64,7 +60,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)newProject{
+    TTProject *project = [TTProject new];
+    project.projectTitle = @"New Project Title";
+    project.dateCreated = [NSDate date];
+    
+    [[TTProjectController sharedInstance] addProject:project];
+    
+    TTProjectDetailViewController *projectView = [[TTProjectDetailViewController alloc]init];
+    
+    projectView.project = project;
+    
+    [self.navigationController pushViewController:projectView animated:YES];
+}
+
 - (void)registerTableView:(UITableView *)tableView {
 [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    TTProjectDetailViewController *projectView = [[TTProjectDetailViewController alloc]init];
+    
+    projectView.project = [TTProjectController sharedInstance].projects[indexPath.row];
+    
+    [self.navigationController pushViewController:projectView animated:YES];
+}
+
 @end
