@@ -112,6 +112,8 @@
     
     [self.workPeriodTableView reloadData];
     
+    [[TTProjectController sharedInstance]synchronize];
+    
     return YES;
 }
 
