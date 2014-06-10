@@ -75,7 +75,7 @@ static NSString * const createdKey = @"created";
     TTWorkPeriod *workPeriod = [TTWorkPeriod new];
     workPeriod.startTime = [NSDate date];
     workPeriod.periodTitle = @"work period";
-    workPeriod.description = @" ";
+    //workPeriod.description = @" ";
     
     self.currentWorkPeriod = workPeriod;
     

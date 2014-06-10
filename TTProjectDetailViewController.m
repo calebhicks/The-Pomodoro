@@ -53,7 +53,7 @@
     // Activate/deactive toolbar items
     
     [[[self.toolbar items] objectAtIndex:0] setEnabled:YES]; // activate add button
-    [[[self.toolbar items] objectAtIndex:2] setEnabled:NO]; // deactivate start button
+    [[[self.toolbar items] objectAtIndex:2] setEnabled:YES]; // activate start button
     [[[self.toolbar items] objectAtIndex:4] setEnabled:NO]; // deactivate finish button
     
     if([self.project.workPeriods count] == 0){
@@ -106,12 +106,6 @@
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    
-//    if(textField == self.projectTitle){
-//    self.project.projectTitle = self.projectTitle.text;
-//    } else if(textField == self.projectDescription){
-//        self.project.projectDescription = self.projectDescription.text;
-//    }
     
     self.project.projectTitle = self.projectTitle.text;
     self.project.projectDescription = self.projectDescription.text;
@@ -167,7 +161,7 @@
 - (IBAction)finishButton:(id)sender {
     
     [[[self.toolbar items] objectAtIndex:0] setEnabled:YES];
-    [[[self.toolbar items] objectAtIndex:2] setEnabled:NO];
+    [[[self.toolbar items] objectAtIndex:2] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:4] setEnabled:NO];
     [[[self.toolbar items] objectAtIndex:6] setEnabled:YES];
     
@@ -178,8 +172,6 @@
 }
 
 - (IBAction)reportButton:(id)sender {
-
-    // add e-mail sheet to send current project work periods
     
     MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc]init];
     
@@ -187,17 +179,29 @@
     
     NSString *stringFromArray;
     
+    NSDateFormatter *emailDateFormatter = [[NSDateFormatter alloc]init];
+    
+    [emailDateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [emailDateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    
     for (TTWorkPeriod *workPeriod in self.project.workPeriods) {
         
-        if (workPeriod.description) {
-            stringFromArray = [NSString stringWithFormat:@"%@\n%@ to %@\n", workPeriod.description, workPeriod.startTime, workPeriod.finishTime];
-        } else {
-            stringFromArray = [NSString stringWithFormat:@"\n%@ to %@\n", workPeriod.startTime, workPeriod.finishTime];
+        if (stringFromArray) {
+            if (workPeriod.duration) {
+                stringFromArray = [NSString stringWithFormat:@"%@\n %f\n%@ to %@\n", stringFromArray, workPeriod.duration, [emailDateFormatter stringFromDate:workPeriod.startTime], [emailDateFormatter stringFromDate:workPeriod.finishTime]];
+            } else {
+                stringFromArray = [NSString stringWithFormat:@"%@\n%@ to %@\n", stringFromArray, [emailDateFormatter stringFromDate:workPeriod.startTime], [emailDateFormatter stringFromDate:workPeriod.finishTime]];
+            }
+        } else{
+            stringFromArray = [NSString stringWithFormat:@"\n%@ to %@\n", [emailDateFormatter stringFromDate:workPeriod.startTime], [emailDateFormatter stringFromDate:workPeriod.finishTime]];
         }
+        
     }
     
+    //todo: add a total hours line to the bottom of the string
     
-    [mailViewController setMessageBody:stringFromArray isHTML:YES];
+    [mailViewController setMessageBody:stringFromArray isHTML:NO];
     
     [self presentViewController:mailViewController animated:YES completion:nil];
     
