@@ -68,6 +68,7 @@ static NSString * const createdKey = @"created";
     NSMutableArray *mutableWorkPeriods = [NSMutableArray arrayWithArray:self.workPeriods];
     [mutableWorkPeriods addObject:self.currentWorkPeriod];
     self.workPeriods = mutableWorkPeriods;
+    [[TTProjectController sharedInstance]synchronize];
 }
 
 - (void)startNewWorkPeriod{

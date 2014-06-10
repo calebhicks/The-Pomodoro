@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C00EADA1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */; };
+		3C00EADB1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */; };
 		3C3A8F1A19437E85004C2E0A /* TTListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F1819437E85004C2E0A /* TTListTableViewController.m */; };
 		3C3A8F1B19437E85004C2E0A /* TTListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A8F1919437E85004C2E0A /* TTListTableViewController.xib */; };
 		3C3A8F1E19438CF9004C2E0A /* TTListTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F1D19438CF9004C2E0A /* TTListTableViewDatasource.m */; };
@@ -47,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C00EAD71946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAddCustomWorkPeriodViewController.h; sourceTree = "<group>"; };
+		3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAddCustomWorkPeriodViewController.m; sourceTree = "<group>"; };
+		3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAddCustomWorkPeriodViewController.xib; sourceTree = "<group>"; };
 		3C3A8F1719437E85004C2E0A /* TTListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListTableViewController.h; sourceTree = "<group>"; };
 		3C3A8F1819437E85004C2E0A /* TTListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTListTableViewController.m; sourceTree = "<group>"; };
 		3C3A8F1919437E85004C2E0A /* TTListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTListTableViewController.xib; sourceTree = "<group>"; };
@@ -163,6 +168,9 @@
 				3C3A8F3119439DB7004C2E0A /* TTProjectDetailViewController.h */,
 				3C3A8F3219439DB7004C2E0A /* TTProjectDetailViewController.m */,
 				3C3A8F3319439DB7004C2E0A /* TTProjectDetailViewController.xib */,
+				3C00EAD71946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.h */,
+				3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */,
+				3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */,
 			);
 			name = "Project Detail View";
 			sourceTree = "<group>";
@@ -353,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C413964193EB90E00A4F262 /* POTimerViewController.xib in Resources */,
+				3C00EADB1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.xib in Resources */,
 				3C3A8F3519439DB7004C2E0A /* TTProjectDetailViewController.xib in Resources */,
 				7141B2F0193DBDFD0084F9F1 /* InfoPlist.strings in Resources */,
 				7141B2F8193DBDFD0084F9F1 /* Images.xcassets in Resources */,
@@ -381,6 +390,7 @@
 				3C3A8F2719439431004C2E0A /* TTProject.m in Sources */,
 				3C3A8F2A1943986C004C2E0A /* TTWorkPeriod.m in Sources */,
 				3C3A8F1A19437E85004C2E0A /* TTListTableViewController.m in Sources */,
+				3C00EADA1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.m in Sources */,
 				3C3A8F2419439417004C2E0A /* TTProjectController.m in Sources */,
 				3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */,
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,

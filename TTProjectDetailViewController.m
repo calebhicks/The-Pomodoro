@@ -9,6 +9,7 @@
 #import "TTProjectDetailViewController.h"
 #import "TTProjectController.h"
 #import "TTWorkPeriod.h"
+#import "TTAddCustomWorkPeriodViewController.h"
 @import MessageUI;
 
 @interface TTProjectDetailViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
@@ -60,6 +61,10 @@
     };
 
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.workPeriodTableView reloadData];
 }
 
 
@@ -122,6 +127,19 @@
 }
 
 - (IBAction)addButton:(id)sender {
+    
+    TTAddCustomWorkPeriodViewController *addCustomWorkPeriodViewController = [[TTAddCustomWorkPeriodViewController alloc]init];
+    
+    TTWorkPeriod *workPeriodToBeAdded = [[TTWorkPeriod alloc]init];
+    
+    self.project.currentWorkPeriod = workPeriodToBeAdded;
+    
+    addCustomWorkPeriodViewController.project = self.project;
+    
+
+//    [[NSNotificationCenter defaultCenter] addObserver:self.project selector:@selector(addWorkPeriod) name:@"customworkperiod" object:nil];
+    
+    [self presentViewController:addCustomWorkPeriodViewController animated:YES completion:nil];
 
     [[[self.toolbar items] objectAtIndex:0] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:2] setEnabled:YES];
