@@ -21,7 +21,7 @@
 - (NSDictionary *)projectDictionary;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
-- (void)addWorkPeriod:(TTWorkPeriod *)workPeriod toProject:(TTProject *)project;
+- (void)addWorkPeriod;
 - (void)startNewWorkPeriod;
 - (void)endCurrentWorkPeriod;
 

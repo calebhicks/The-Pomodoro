@@ -9,10 +9,12 @@
 #import "TTProjectDetailViewController.h"
 #import "TTProjectController.h"
 #import "TTWorkPeriod.h"
+@import MessageUI;
 
-@interface TTProjectDetailViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface TTProjectDetailViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *projectTitle;
+@property (weak, nonatomic) IBOutlet UITextField *projectDescription;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UITableView *workPeriodTableView;
 
@@ -40,17 +42,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.projectTitle.text = self.project.projectTitle;
+    self.projectDescription.text = self.project.projectDescription;
     
     self.workPeriodTableView.dataSource = self;
     self.workPeriodTableView.delegate = self;
     self.projectTitle.delegate = self;
+    self.projectDescription.delegate = self;
     
     // Activate/deactive toolbar items
     
     [[[self.toolbar items] objectAtIndex:0] setEnabled:YES]; // activate add button
     [[[self.toolbar items] objectAtIndex:2] setEnabled:NO]; // deactivate start button
     [[[self.toolbar items] objectAtIndex:4] setEnabled:NO]; // deactivate finish button
+    
+    if([self.project.workPeriods count] == 0){
     [[[self.toolbar items] objectAtIndex:6] setEnabled:NO]; // deactivate report button
+    };
 
     
 }
@@ -66,6 +73,8 @@
     
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"workperiodcell"];
     
+    TTWorkPeriod *tempWorkPeriod = [self.project.workPeriods objectAtIndex:indexPath.row];
+    
     NSDateFormatter *startDateFormatter = [NSDateFormatter new];
     [startDateFormatter setTimeStyle:NSDateFormatterShortStyle];
     [startDateFormatter setDateStyle:NSDateFormatterShortStyle];
@@ -74,14 +83,14 @@
     [endDateFormatter setTimeStyle:NSDateFormatterShortStyle];
     [endDateFormatter setDateStyle:NSDateFormatterNoStyle];
     
-    if (self.project.currentWorkPeriod.startTime && self.project.currentWorkPeriod.finishTime) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", [startDateFormatter stringFromDate:self.project.currentWorkPeriod.startTime], [endDateFormatter stringFromDate:self.project.currentWorkPeriod.finishTime]];
+    if (tempWorkPeriod.startTime && tempWorkPeriod.finishTime) {
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", [startDateFormatter stringFromDate:tempWorkPeriod.startTime], [endDateFormatter stringFromDate:tempWorkPeriod.finishTime]];
     } else{
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ - running", [startDateFormatter stringFromDate:self.project.currentWorkPeriod.startTime]];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@ - running", [startDateFormatter stringFromDate:tempWorkPeriod.startTime]];
     }
     
     if(self.project.currentWorkPeriod.duration){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.project.currentWorkPeriod.duration];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", tempWorkPeriod.duration];
     }
     
     return cell;
@@ -92,7 +101,18 @@
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    
+//    if(textField == self.projectTitle){
+//    self.project.projectTitle = self.projectTitle.text;
+//    } else if(textField == self.projectDescription){
+//        self.project.projectDescription = self.projectDescription.text;
+//    }
+    
     self.project.projectTitle = self.projectTitle.text;
+    self.project.projectDescription = self.projectDescription.text;
+    
+    [self.workPeriodTableView reloadData];
+    
     return YES;
 }
 
@@ -102,12 +122,11 @@
 }
 
 - (IBAction)addButton:(id)sender {
-    [self createNewWorkPeriod];
-    
-    [[[self.toolbar items] objectAtIndex:0] setEnabled:NO];
+
+    [[[self.toolbar items] objectAtIndex:0] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:2] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:4] setEnabled:NO];
-    [[[self.toolbar items] objectAtIndex:6] setEnabled:NO];
+    [[[self.toolbar items] objectAtIndex:6] setEnabled:YES];
     
     [self.workPeriodTableView reloadData];
     
@@ -115,7 +134,7 @@
 
 - (IBAction)startButton:(id)sender {
     
-    [[[self.toolbar items] objectAtIndex:0] setEnabled:NO];
+    [[[self.toolbar items] objectAtIndex:0] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:2] setEnabled:NO];
     [[[self.toolbar items] objectAtIndex:4] setEnabled:YES];
     [[[self.toolbar items] objectAtIndex:6] setEnabled:NO];
@@ -144,15 +163,36 @@
 
     // add e-mail sheet to send current project work periods
     
+    MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc]init];
+    
+    mailViewController.mailComposeDelegate = self;
+    
+    NSString *stringFromArray;
+    
+    for (TTWorkPeriod *workPeriod in self.project.workPeriods) {
+        
+        if (workPeriod.description) {
+            stringFromArray = [NSString stringWithFormat:@"%@\n%@ to %@\n", workPeriod.description, workPeriod.startTime, workPeriod.finishTime];
+        } else {
+            stringFromArray = [NSString stringWithFormat:@"\n%@ to %@\n", workPeriod.startTime, workPeriod.finishTime];
+        }
+    }
+    
+    
+    [mailViewController setMessageBody:stringFromArray isHTML:YES];
+    
+    [self presentViewController:mailViewController animated:YES completion:nil];
+    
 }
 
-- (void) createNewWorkPeriod{
-
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
 - (void) startCurrentWorkPeriod{
-    [self.project addWorkPeriod:self.project.currentWorkPeriod toProject:self.project];
+    [self.project startNewWorkPeriod];
     
     [self.workPeriodTableView reloadData];
 }

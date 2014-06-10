@@ -31,7 +31,6 @@ static NSString * const durationKey = @"duration";
     
     if (self.finishTime){
         [entryDictionary setValue:self.finishTime forKey:finishKey];
-        
     }
     
     if (self.description){

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="addButton" destination="Y8Q-CO-aQb" id="DKe-Sy-P84"/>
                 <outlet property="finishButton" destination="rWl-C4-QfF" id="M5d-jJ-ddZ"/>
+                <outlet property="projectDescription" destination="8sJ-9h-pq7" id="8Rx-1v-H8H"/>
                 <outlet property="projectTitle" destination="4tv-XQ-oAh" id="aN3-89-Bum"/>
                 <outlet property="reportButton" destination="586-hN-bzW" id="7Kx-27-1ZW"/>
                 <outlet property="startButton" destination="km7-g5-Bgt" id="NiC-mp-2mF"/>
@@ -29,14 +30,14 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGb-nW-4W3">
-                    <rect key="frame" x="90" y="159" width="140" height="40"/>
+                    <rect key="frame" x="90" y="175" width="140" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SZC-ws-x1E">
-                    <rect key="frame" x="0.0" y="227" width="320" height="250"/>
+                    <rect key="frame" x="0.0" y="238" width="320" height="239"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
@@ -44,7 +45,7 @@
                     <rect key="frame" x="0.0" y="477" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem title="Add" id="Y8Q-CO-aQb">
+                        <barButtonItem title="Create" id="Y8Q-CO-aQb">
                             <connections>
                                 <action selector="addButton:" destination="-1" id="I2L-Kn-ey4"/>
                             </connections>
@@ -69,6 +70,12 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8sJ-9h-pq7">
+                    <rect key="frame" x="20" y="126" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

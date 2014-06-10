@@ -50,17 +50,24 @@ static NSString * const createdKey = @"created";
     if (self) {
         self.projectTitle = dictionary[titleKey];
         self.projectDescription = dictionary[descriptionKey];
-        self.workPeriods = dictionary[periodsKey];
+        
+        NSArray *workPeriodDictionaries = dictionary[periodsKey];
+        NSMutableArray *workPeriods = [NSMutableArray new];
+        for (NSDictionary *workPeriodDictionary in workPeriodDictionaries) {
+            TTWorkPeriod *workPeriod = [[TTWorkPeriod alloc] initWithDictionary:workPeriodDictionary];
+            [workPeriods addObject:workPeriod];
+            }
+        self.workPeriods = workPeriods;
+        
         self.dateCreated = dictionary[createdKey];
-    }
+        }
     return self;
 }
 
-- (void)addWorkPeriod:(TTWorkPeriod *)workPeriod toProject:(TTProject *)project{
-    
-    NSMutableArray *mutableWorkPeriods = [NSMutableArray arrayWithArray:project.workPeriods];
-    [mutableWorkPeriods addObject:workPeriod];
-    project.workPeriods = mutableWorkPeriods;
+- (void)addWorkPeriod{
+    NSMutableArray *mutableWorkPeriods = [NSMutableArray arrayWithArray:self.workPeriods];
+    [mutableWorkPeriods addObject:self.currentWorkPeriod];
+    self.workPeriods = mutableWorkPeriods;
 }
 
 - (void)startNewWorkPeriod{
@@ -71,7 +78,7 @@ static NSString * const createdKey = @"created";
     
     self.currentWorkPeriod = workPeriod;
     
-    [self addWorkPeriod:self.currentWorkPeriod toProject:self];
+    [self addWorkPeriod];
     [[TTProjectController sharedInstance]synchronize];
     
 }
