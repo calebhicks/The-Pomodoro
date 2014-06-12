@@ -71,6 +71,9 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
 
 - (IBAction)startTime:(id)sender {
     
+    self.minutes = 0;
+    self.seconds = 10;
+    
     if(self.active == NO){
         [self.startTimeButton setTitle:@"Pause" forState:UIControlStateNormal];
         self.active = YES;
@@ -149,7 +152,6 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
     }else{
         if(self.seconds == 0){
             self.startTimeButton.enabled = YES;
-            [self.startTimeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
             self.active = NO;
             

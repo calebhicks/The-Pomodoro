@@ -137,8 +137,6 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [self postMinutes];
     
-    [self showAlertView];
-    
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
