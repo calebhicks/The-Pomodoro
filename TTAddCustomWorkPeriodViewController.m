@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *startTimePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *finishTimePicker;
 @property (weak, nonatomic) IBOutlet UIButton *addWorkPeriodButton;
+@property (assign, nonatomic) NSTimeInterval maxDateBeforeNow;
 
 @end
 
@@ -22,7 +23,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.maxDateBeforeNow = -60;
+//        [self.startTimePicker setMaximumDate:[NSDate date]];
+//        [self.finishTimePicker setMaximumDate:[NSDate date]];
     }
     return self;
 }
@@ -30,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.finishTimePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:self.maxDateBeforeNow];
     
     if (self.project.currentWorkPeriod.startTime) {
         [self.startTimePicker setDate:self.project.currentWorkPeriod.startTime animated:YES];
@@ -49,6 +54,8 @@
 
 - (IBAction)startTimePickerChanged:(id)sender {
     self.project.currentWorkPeriod.startTime = self.startTimePicker.date;
+    [self.finishTimePicker setMinimumDate:self.project.currentWorkPeriod.startTime];
+    [self.finishTimePicker setDate:self.project.currentWorkPeriod.startTime animated:YES];
 }
 
 

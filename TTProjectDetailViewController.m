@@ -194,7 +194,7 @@
         
         if (stringFromArray) {
             if (workPeriod.duration) {
-                stringFromArray = [NSString stringWithFormat:@"%@\n %f\n%@ to %@\n", stringFromArray, workPeriod.duration, [emailDateFormatter stringFromDate:workPeriod.startTime], [emailDateFormatter stringFromDate:workPeriod.finishTime]];
+                stringFromArray = [NSString stringWithFormat:@"%@\n %@ to %@\n", stringFromArray, [emailDateFormatter stringFromDate:workPeriod.startTime], [emailDateFormatter stringFromDate:workPeriod.finishTime]];
             } else {
                 stringFromArray = [NSString stringWithFormat:@"%@\n%@ to %@\n", stringFromArray, [emailDateFormatter stringFromDate:workPeriod.startTime], [emailDateFormatter stringFromDate:workPeriod.finishTime]];
             }
@@ -205,8 +205,6 @@
     }
     
     stringFromArray = [NSString stringWithFormat:@"%@\nTotal Time: %@", stringFromArray, self.timeLabel.text];
-    
-    //todo: add a total hours line to the bottom of the string
     
     [mailViewController setMessageBody:stringFromArray isHTML:NO];
     
