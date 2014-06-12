@@ -60,6 +60,8 @@
     
     [self.project addWorkPeriod];
     
+    [self.project updateDuration];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

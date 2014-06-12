@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *projectDescription;
 @property (strong, nonatomic) NSArray *workPeriods;
 @property (strong, nonatomic) NSDate *dateCreated;
+@property (assign, nonatomic) NSTimeInterval totalDuration;
 
 @property (strong, nonatomic) TTWorkPeriod *currentWorkPeriod;
 
@@ -24,6 +25,6 @@
 - (void)addWorkPeriod;
 - (void)startNewWorkPeriod;
 - (void)endCurrentWorkPeriod;
-
+- (void)updateDuration;
 
 @end

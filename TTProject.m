@@ -86,7 +86,34 @@ static NSString * const createdKey = @"created";
 
 - (void)endCurrentWorkPeriod{
     self.currentWorkPeriod.finishTime = [NSDate date];
+    [self updateDuration];
     [[TTProjectController sharedInstance]synchronize];
+}
+
+- (void)updateDuration{
+
+    self.currentWorkPeriod.duration = [self.currentWorkPeriod.finishTime timeIntervalSinceDate:self.currentWorkPeriod.startTime];
+
+    [self updateTotalDuration];
+    
+}
+
+- (void)updateTotalDuration{
+    
+    NSTimeInterval totalDuration = 0.0;
+    NSInteger timeInteger = totalDuration;
+
+    
+    for (TTWorkPeriod *workPeriod in self.workPeriods) {
+        
+        timeInteger += workPeriod.duration;
+        
+    }
+    
+    totalDuration = timeInteger;
+    
+    self.totalDuration = totalDuration;
+            
 }
 
 @end

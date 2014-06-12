@@ -59,6 +59,8 @@
     if([self.project.workPeriods count] == 0){
     [[[self.toolbar items] objectAtIndex:6] setEnabled:NO]; // deactivate report button
     };
+    
+    [self updateLabel];
 
     
 }
@@ -224,7 +226,60 @@
 - (void) endCurrentWorkPeriod{
     [self.project endCurrentWorkPeriod];
     
+    [self updateLabel];
+    
     [self.workPeriodTableView reloadData];
+}
+
+- (void)updateLabel {
+    
+    NSTimeInterval projectDuration = self.project.totalDuration;
+    NSInteger projectDurationInteger = projectDuration;
+    NSInteger countdown = projectDuration;
+    
+    NSInteger hours;
+    NSInteger minutes;
+    NSInteger seconds;
+
+    if(projectDurationInteger > 3600){
+        hours = floor(projectDuration/3600);
+        countdown -= hours*3600;
+    } else{
+        hours = 0;
+    }
+    
+    if(countdown > 60){
+        minutes = floor(countdown/60);
+        countdown -= minutes*60;
+    } else{
+        minutes = 0;
+    }
+    
+    seconds = countdown % 60; //remainder of timeinterval
+
+    
+    if (minutes < 10) {
+        self.timeLabel.text = [NSString stringWithFormat:@"%d:0%d", hours, minutes];
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
+    } else {
+        self.timeLabel.text = [NSString stringWithFormat:@"%d:%d", hours, minutes];
+        //[[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
+    }
+    
+//    if want 00:00:00
+//    if (minutes < 10 && seconds < 10){
+//        self.timeLabel.text = [NSString stringWithFormat:@"%d:%0d:0%d", hours, minutes, seconds];
+//    } else
+//    if (minutes < 10) {
+//        self.timeLabel.text = [NSString stringWithFormat:@"%d:%0d:0%d", hours, minutes, seconds];
+//    } else
+//    if (seconds < 10) {
+//        self.timeLabel.text = [NSString stringWithFormat:@"%d:%d:0%d", hours, minutes, seconds];
+//        //[[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
+//    } else {
+//        self.timeLabel.text = [NSString stringWithFormat:@"%d:%d:%d", hours, minutes, seconds];
+//        //[[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
+//    }
 }
 
 @end
