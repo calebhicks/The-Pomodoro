@@ -66,6 +66,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [self updateLabel];
     [self.workPeriodTableView reloadData];
 }
 
@@ -202,6 +203,8 @@
         }
         
     }
+    
+    stringFromArray = [NSString stringWithFormat:@"%@\nTotal Time: %@", stringFromArray, self.timeLabel.text];
     
     //todo: add a total hours line to the bottom of the string
     

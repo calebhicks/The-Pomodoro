@@ -83,6 +83,10 @@
     
     projectView.project = [TTProjectController sharedInstance].projects[indexPath.row];
     
+    //projectView.title = projectView.project.projectTitle;
+    
+    [projectView.project updateDuration];
+    
     [self.navigationController pushViewController:projectView animated:YES];
 }
 
