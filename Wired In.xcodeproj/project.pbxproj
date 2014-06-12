@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C00EADA1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */; };
+		3C00EADB1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */; };
+		3C3A8F1A19437E85004C2E0A /* TTListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F1819437E85004C2E0A /* TTListTableViewController.m */; };
+		3C3A8F1B19437E85004C2E0A /* TTListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A8F1919437E85004C2E0A /* TTListTableViewController.xib */; };
+		3C3A8F1E19438CF9004C2E0A /* TTListTableViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F1D19438CF9004C2E0A /* TTListTableViewDatasource.m */; };
+		3C3A8F2419439417004C2E0A /* TTProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F2319439417004C2E0A /* TTProjectController.m */; };
+		3C3A8F2719439431004C2E0A /* TTProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F2619439431004C2E0A /* TTProject.m */; };
+		3C3A8F2A1943986C004C2E0A /* TTWorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F291943986C004C2E0A /* TTWorkPeriod.m */; };
+		3C3A8F3419439DB7004C2E0A /* TTProjectDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A8F3219439DB7004C2E0A /* TTProjectDetailViewController.m */; };
+		3C3A8F3519439DB7004C2E0A /* TTProjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A8F3319439DB7004C2E0A /* TTProjectDetailViewController.xib */; };
 		3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */; };
 		3C3AC78B1942B3C800BCBA6B /* POIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */; };
 		3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413961193EB90E00A4F262 /* POTimerViewController.m */; };
@@ -39,6 +49,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C00EAD71946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAddCustomWorkPeriodViewController.h; sourceTree = "<group>"; };
+		3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAddCustomWorkPeriodViewController.m; sourceTree = "<group>"; };
+		3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAddCustomWorkPeriodViewController.xib; sourceTree = "<group>"; };
+		3C3A8F1719437E85004C2E0A /* TTListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListTableViewController.h; sourceTree = "<group>"; };
+		3C3A8F1819437E85004C2E0A /* TTListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTListTableViewController.m; sourceTree = "<group>"; };
+		3C3A8F1919437E85004C2E0A /* TTListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTListTableViewController.xib; sourceTree = "<group>"; };
+		3C3A8F1C19438CF9004C2E0A /* TTListTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListTableViewDatasource.h; sourceTree = "<group>"; };
+		3C3A8F1D19438CF9004C2E0A /* TTListTableViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTListTableViewDatasource.m; sourceTree = "<group>"; };
+		3C3A8F2219439417004C2E0A /* TTProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProjectController.h; sourceTree = "<group>"; };
+		3C3A8F2319439417004C2E0A /* TTProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProjectController.m; sourceTree = "<group>"; };
+		3C3A8F2519439431004C2E0A /* TTProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProject.h; sourceTree = "<group>"; };
+		3C3A8F2619439431004C2E0A /* TTProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProject.m; sourceTree = "<group>"; };
+		3C3A8F281943986C004C2E0A /* TTWorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWorkPeriod.h; sourceTree = "<group>"; };
+		3C3A8F291943986C004C2E0A /* TTWorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWorkPeriod.m; sourceTree = "<group>"; };
+		3C3A8F3119439DB7004C2E0A /* TTProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProjectDetailViewController.h; sourceTree = "<group>"; };
+		3C3A8F3219439DB7004C2E0A /* TTProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProjectDetailViewController.m; sourceTree = "<group>"; };
+		3C3A8F3319439DB7004C2E0A /* TTProjectDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTProjectDetailViewController.xib; sourceTree = "<group>"; };
 		3C3AC7871942B3C800BCBA6B /* POIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIntroViewController.h; path = ../POIntroViewController.h; sourceTree = "<group>"; };
 		3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIntroViewController.m; path = ../POIntroViewController.m; sourceTree = "<group>"; };
 		3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POIntroViewController.xib; path = ../POIntroViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +119,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C3A8F1619437E2F004C2E0A /* Project List */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8F3019439D8C004C2E0A /* List View */,
+				3C3A8F3619439DC4004C2E0A /* Project Detail View */,
+				3C3A8F2E19439D6C004C2E0A /* Project Object */,
+				3C3A8F2F19439D73004C2E0A /* Work Period Object */,
+			);
+			name = "Project List";
+			sourceTree = "<group>";
+		};
+		3C3A8F2E19439D6C004C2E0A /* Project Object */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8F2519439431004C2E0A /* TTProject.h */,
+				3C3A8F2619439431004C2E0A /* TTProject.m */,
+				3C3A8F2219439417004C2E0A /* TTProjectController.h */,
+				3C3A8F2319439417004C2E0A /* TTProjectController.m */,
+			);
+			name = "Project Object";
+			sourceTree = "<group>";
+		};
+		3C3A8F2F19439D73004C2E0A /* Work Period Object */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8F281943986C004C2E0A /* TTWorkPeriod.h */,
+				3C3A8F291943986C004C2E0A /* TTWorkPeriod.m */,
+			);
+			name = "Work Period Object";
+			sourceTree = "<group>";
+		};
+		3C3A8F3019439D8C004C2E0A /* List View */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8F1719437E85004C2E0A /* TTListTableViewController.h */,
+				3C3A8F1819437E85004C2E0A /* TTListTableViewController.m */,
+				3C3A8F1919437E85004C2E0A /* TTListTableViewController.xib */,
+				3C3A8F1C19438CF9004C2E0A /* TTListTableViewDatasource.h */,
+				3C3A8F1D19438CF9004C2E0A /* TTListTableViewDatasource.m */,
+			);
+			name = "List View";
+			sourceTree = "<group>";
+		};
+		3C3A8F3619439DC4004C2E0A /* Project Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A8F3119439DB7004C2E0A /* TTProjectDetailViewController.h */,
+				3C3A8F3219439DB7004C2E0A /* TTProjectDetailViewController.m */,
+				3C3A8F3319439DB7004C2E0A /* TTProjectDetailViewController.xib */,
+				3C00EAD71946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.h */,
+				3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */,
+				3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */,
+			);
+			name = "Project Detail View";
+			sourceTree = "<group>";
+		};
 		3C3AC7811942B10100BCBA6B /* Intro */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +208,7 @@
 		7141B2D9193DBDFD0084F9F1 = {
 			isa = PBXGroup;
 			children = (
+				3C3A8F1619437E2F004C2E0A /* Project List */,
 				7141B2EB193DBDFD0084F9F1 /* The Pomodoro */,
 				7141B304193DBDFE0084F9F1 /* The PomodoroTests */,
 				7141B2E4193DBDFD0084F9F1 /* Frameworks */,
@@ -277,8 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C413964193EB90E00A4F262 /* POTimerViewController.xib in Resources */,
+				3C00EADB1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.xib in Resources */,
+				3C3A8F3519439DB7004C2E0A /* TTProjectDetailViewController.xib in Resources */,
 				7141B2F0193DBDFD0084F9F1 /* InfoPlist.strings in Resources */,
 				7141B2F8193DBDFD0084F9F1 /* Images.xcassets in Resources */,
+				3C3A8F1B19437E85004C2E0A /* TTListTableViewController.xib in Resources */,
 				3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */,
 				3C3AC78B1942B3C800BCBA6B /* POIntroViewController.xib in Resources */,
 			);
@@ -299,10 +386,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C3A8F1E19438CF9004C2E0A /* TTListTableViewDatasource.m in Sources */,
+				3C3A8F2719439431004C2E0A /* TTProject.m in Sources */,
+				3C3A8F2A1943986C004C2E0A /* TTWorkPeriod.m in Sources */,
+				3C3A8F1A19437E85004C2E0A /* TTListTableViewController.m in Sources */,
+				3C00EADA1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.m in Sources */,
+				3C3A8F2419439417004C2E0A /* TTProjectController.m in Sources */,
 				3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */,
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,
+				3C3A8F3419439DB7004C2E0A /* TTProjectDetailViewController.m in Sources */,
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,
 				3C413968193EB92E00A4F262 /* POListViewController.m in Sources */,
 			);
