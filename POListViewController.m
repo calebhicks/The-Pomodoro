@@ -8,6 +8,8 @@
 
 #import "POListViewController.h"
 #import "POTimerViewController.h"
+#import "TTProjectController.h"
+#import "TTProject.h"
 
 static NSString * const CurrentRoundKey = @"CurrentRound";
 
@@ -140,7 +142,10 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if(buttonIndex == 0){
+    if(buttonIndex == 1){ //button to add to project
+        
+        [self addRoundToNewProject];
+        
         return;
     }else{
         return;
@@ -148,7 +153,7 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 }
 
 - (void) showAlertView{
-    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Nice work! Go for another round!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Nice work! Go for another round!" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Add to Project", nil];
     
     [alertEndRound show];
 }
@@ -163,6 +168,25 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [self postMinutes];
     
+}
+
+- (void) addRoundToNewProject{
+    TTProject *projectToAddTo = [[TTProject alloc]init];
+    TTWorkPeriod *workPeriodToAdd = [[TTWorkPeriod alloc]init];
+    
+    projectToAddTo.projectTitle = @"Pomodoro To Project";
+    projectToAddTo.projectDescription = @"Testing";
+    projectToAddTo.currentWorkPeriod = workPeriodToAdd;
+    projectToAddTo.dateCreated = [NSDate date];
+    
+    workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
+    workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
+    workPeriodToAdd.periodTitle = @"work period";
+    workPeriodToAdd.description = @"from pomodoro";
+    
+    [projectToAddTo addWorkPeriod];
+    
+    [[TTProjectController sharedInstance]addProject:projectToAddTo];
 }
 
 @end

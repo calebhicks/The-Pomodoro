@@ -24,6 +24,8 @@
 		3C413968193EB92E00A4F262 /* POListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413966193EB92E00A4F262 /* POListViewController.m */; };
 		3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413967193EB92E00A4F262 /* POListViewController.xib */; };
 		3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F3F9519400A0000CF6D20 /* POAppearance.m */; };
+		3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */; };
+		3CA06878194A429F00DB24CA /* POAddToProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */; };
 		7141B2E6193DBDFD0084F9F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E5193DBDFD0084F9F1 /* Foundation.framework */; };
 		7141B2E8193DBDFD0084F9F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E7193DBDFD0084F9F1 /* CoreGraphics.framework */; };
 		7141B2EA193DBDFD0084F9F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E9193DBDFD0084F9F1 /* UIKit.framework */; };
@@ -77,6 +79,9 @@
 		3C413967193EB92E00A4F262 /* POListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POListViewController.xib; path = ../POListViewController.xib; sourceTree = "<group>"; };
 		3C6F3F9419400A0000CF6D20 /* POAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAppearance.h; sourceTree = "<group>"; };
 		3C6F3F9519400A0000CF6D20 /* POAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAppearance.m; sourceTree = "<group>"; };
+		3CA06874194A429F00DB24CA /* POAddToProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAddToProjectViewController.h; sourceTree = "<group>"; };
+		3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAddToProjectViewController.m; sourceTree = "<group>"; };
+		3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POAddToProjectViewController.xib; sourceTree = "<group>"; };
 		7141B2E2193DBDFD0084F9F1 /* Wired In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wired In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7141B2E5193DBDFD0084F9F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7141B2E7193DBDFD0084F9F1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -205,6 +210,16 @@
 			name = List;
 			sourceTree = "<group>";
 		};
+		3CA06879194A42AC00DB24CA /* Add Round to Project */ = {
+			isa = PBXGroup;
+			children = (
+				3CA06874194A429F00DB24CA /* POAddToProjectViewController.h */,
+				3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */,
+				3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */,
+			);
+			name = "Add Round to Project";
+			sourceTree = "<group>";
+		};
 		7141B2D9193DBDFD0084F9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +260,7 @@
 				3C6F3F9519400A0000CF6D20 /* POAppearance.m */,
 				3C413955193EAE6000A4F262 /* Timer */,
 				3C413956193EAE7900A4F262 /* List */,
+				3CA06879194A42AC00DB24CA /* Add Round to Project */,
 				3C3AC7811942B10100BCBA6B /* Intro */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
 				7141B2EC193DBDFD0084F9F1 /* Supporting Files */,
@@ -364,6 +380,7 @@
 				3C00EADB1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.xib in Resources */,
 				3C3A8F3519439DB7004C2E0A /* TTProjectDetailViewController.xib in Resources */,
 				7141B2F0193DBDFD0084F9F1 /* InfoPlist.strings in Resources */,
+				3CA06878194A429F00DB24CA /* POAddToProjectViewController.xib in Resources */,
 				7141B2F8193DBDFD0084F9F1 /* Images.xcassets in Resources */,
 				3C3A8F1B19437E85004C2E0A /* TTListTableViewController.xib in Resources */,
 				3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */,
@@ -396,6 +413,7 @@
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,
+				3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */,
 				3C3A8F3419439DB7004C2E0A /* TTProjectDetailViewController.m in Sources */,
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,
 				3C413968193EB92E00A4F262 /* POListViewController.m in Sources */,

@@ -94,14 +94,8 @@
 }
 
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    
-    // display alert only if notification is of round finished
-    if( [notification.userInfo  isEqual: @{@"roundfinished": @"YES"}]){
-    UIAlertView *alertEndRound = [[UIAlertView alloc]initWithTitle:@"Round Complete" message:@"Nice work! Go for another round!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    
-    [alertEndRound show];
-    }
-    
+
+    [self.listViewController showAlertView];
 }
 
 @end

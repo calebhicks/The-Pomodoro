@@ -88,6 +88,10 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
         [self cancelLocalNotifications];
     }
     
+    NSDate *startTime = [NSDate date];
+    [[NSUserDefaults standardUserDefaults] setObject:startTime forKey:@"StartTime"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    
 
 }
 
@@ -171,6 +175,8 @@ static NSString * const CurrentSecondsKey = @"CurrentSeconds";
 - (void)newRound:(NSNotification *)notification {
     self.minutes = [notification.userInfo[UserInfoMinutesKey] integerValue];
     self.seconds = 0;
+    
+    // todo: send notification with the date to list view controller
     
     [self cancelLocalNotifications];
     
