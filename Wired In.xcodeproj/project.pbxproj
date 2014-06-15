@@ -24,6 +24,8 @@
 		3C413968193EB92E00A4F262 /* POListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413966193EB92E00A4F262 /* POListViewController.m */; };
 		3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413967193EB92E00A4F262 /* POListViewController.xib */; };
 		3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F3F9519400A0000CF6D20 /* POAppearance.m */; };
+		3C835C3D194D47FC0045E6B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C835C3C194D47FC0045E6B1 /* CoreData.framework */; };
+		3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */; };
 		3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */; };
 		3CA06878194A429F00DB24CA /* POAddToProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */; };
 		7141B2E6193DBDFD0084F9F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E5193DBDFD0084F9F1 /* Foundation.framework */; };
@@ -79,6 +81,8 @@
 		3C413967193EB92E00A4F262 /* POListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POListViewController.xib; path = ../POListViewController.xib; sourceTree = "<group>"; };
 		3C6F3F9419400A0000CF6D20 /* POAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAppearance.h; sourceTree = "<group>"; };
 		3C6F3F9519400A0000CF6D20 /* POAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAppearance.m; sourceTree = "<group>"; };
+		3C835C3C194D47FC0045E6B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObjectModel.xcdatamodel; sourceTree = "<group>"; };
 		3CA06874194A429F00DB24CA /* POAddToProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAddToProjectViewController.h; sourceTree = "<group>"; };
 		3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAddToProjectViewController.m; sourceTree = "<group>"; };
 		3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POAddToProjectViewController.xib; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C835C3D194D47FC0045E6B1 /* CoreData.framework in Frameworks */,
 				7141B2E8193DBDFD0084F9F1 /* CoreGraphics.framework in Frameworks */,
 				7141B2EA193DBDFD0084F9F1 /* UIKit.framework in Frameworks */,
 				7141B2E6193DBDFD0084F9F1 /* Foundation.framework in Frameworks */,
@@ -243,6 +248,7 @@
 		7141B2E4193DBDFD0084F9F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C835C3C194D47FC0045E6B1 /* CoreData.framework */,
 				7141B2E5193DBDFD0084F9F1 /* Foundation.framework */,
 				7141B2E7193DBDFD0084F9F1 /* CoreGraphics.framework */,
 				7141B2E9193DBDFD0084F9F1 /* UIKit.framework */,
@@ -263,6 +269,7 @@
 				3CA06879194A42AC00DB24CA /* Add Round to Project */,
 				3C3AC7811942B10100BCBA6B /* Intro */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
+				3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */,
 				7141B2EC193DBDFD0084F9F1 /* Supporting Files */,
 			);
 			path = "The Pomodoro";
@@ -346,7 +353,7 @@
 				ORGANIZATIONNAME = DevMountain;
 				TargetAttributes = {
 					7141B2E1193DBDFD0084F9F1 = {
-						DevelopmentTeam = 969L5L5G9L;
+						DevelopmentTeam = 7DR9SLF8Y4;
 					};
 					7141B2FC193DBDFE0084F9F1 = {
 						TestTargetID = 7141B2E1193DBDFD0084F9F1;
@@ -411,6 +418,7 @@
 				3C3A8F2419439417004C2E0A /* TTProjectController.m in Sources */,
 				3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */,
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
+				3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,
 				3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */,
@@ -631,6 +639,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */,
+			);
+			currentVersion = 3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */;
+			path = ObjectModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7141B2DA193DBDFD0084F9F1 /* Project object */;
 }
