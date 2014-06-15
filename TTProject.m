@@ -90,6 +90,13 @@ static NSString * const createdKey = @"created";
     [[TTProjectController sharedInstance]synchronize];
 }
 
+- (void)addRoundAsWorkPeriod:(TTWorkPeriod *)workPeriod{
+    NSMutableArray *mutableWorkPeriods = [NSMutableArray arrayWithArray:self.workPeriods];
+    [mutableWorkPeriods addObject:workPeriod];
+    self.workPeriods = mutableWorkPeriods;
+    [[TTProjectController sharedInstance]synchronize];
+}
+
 - (void)updateDuration{
 
     self.currentWorkPeriod.duration = [self.currentWorkPeriod.finishTime timeIntervalSinceDate:self.currentWorkPeriod.startTime];

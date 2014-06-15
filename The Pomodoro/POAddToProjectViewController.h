@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTProject.h"
+
+@protocol SelectorDelegate <NSObject>
+
+-(void) selectorDidSelectProject:(TTProject *)project;
+
+@end
 
 @interface POAddToProjectViewController : UIViewController
+
+@property (nonatomic, weak) id <SelectorDelegate> delegate;
 
 @end

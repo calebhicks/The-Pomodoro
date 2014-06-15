@@ -10,11 +10,12 @@
 #import "POTimerViewController.h"
 #import "TTProjectController.h"
 #import "TTProject.h"
+#import "POAddToProjectViewController.h"
 
 static NSString * const CurrentRoundKey = @"CurrentRound";
 
 
-@interface POListViewController () <UIAlertViewDelegate>
+@interface POListViewController () <UIAlertViewDelegate, SelectorDelegate>
 
 @property (nonatomic, assign) NSInteger currentRound;
 @property (nonatomic, strong) UITableView *tableView;
@@ -171,22 +172,33 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 }
 
 - (void) addRoundToNewProject{
-    TTProject *projectToAddTo = [[TTProject alloc]init];
-    TTWorkPeriod *workPeriodToAdd = [[TTWorkPeriod alloc]init];
+//    TTProject *projectToAddTo = [[TTProject alloc]init];
+
+    POAddToProjectViewController *selectorController = [POAddToProjectViewController new];
+    selectorController.delegate = self;
     
-    projectToAddTo.projectTitle = @"Pomodoro To Project";
-    projectToAddTo.projectDescription = @"Testing";
-    projectToAddTo.currentWorkPeriod = workPeriodToAdd;
-    projectToAddTo.dateCreated = [NSDate date];
+    [self.tabBarController presentViewController:selectorController animated:YES completion:nil];
+    
+//    projectToAddTo.projectTitle = @"Pomodoro To Project";
+//    projectToAddTo.projectDescription = @"Testing";
+//    projectToAddTo.currentWorkPeriod = workPeriodToAdd;
+//    projectToAddTo.dateCreated = [NSDate date];
+    
+//    [[TTProjectController sharedInstance]addProject:projectToAddTo];
+}
+
+- (void)selectorDidSelectProject:(TTProject *)project{
+    
+    [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+    
+    TTWorkPeriod *workPeriodToAdd = [[TTWorkPeriod alloc]init];
     
     workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
     workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
     workPeriodToAdd.periodTitle = @"work period";
     workPeriodToAdd.description = @"from pomodoro";
     
-    [projectToAddTo addWorkPeriod];
+    [project addRoundAsWorkPeriod:workPeriodToAdd];
     
-    [[TTProjectController sharedInstance]addProject:projectToAddTo];
 }
-
 @end
