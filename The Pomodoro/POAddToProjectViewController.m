@@ -9,9 +9,11 @@
 #import "POAddToProjectViewController.h"
 #import "TTProjectController.h"
 
-@interface POAddToProjectViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface POAddToProjectViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
-@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *workPeriodTitleField;
+@property (weak, nonatomic) IBOutlet UITextField *workPeriodDescriptionField;
 
 @end
 
@@ -30,12 +32,13 @@
 {
     [super viewDidLoad];
 
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    [self registerTableView:self.tableView];
+//    self.tableView = [[UITableView alloc]init];
+//    self.tableView.dataSource = self;
+//    self.tableView.delegate = self;
+//    [self registerTableView:self.tableView];
     
-    [self.view addSubview:self.tableView];
+    self.workPeriodTitleField.delegate = self;
+    self.workPeriodDescriptionField.delegate = self;
 
 }
 
@@ -80,5 +83,36 @@
     
     [self.delegate selectorDidSelectProject:[TTProjectController sharedInstance].projects[indexPath.row]];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+//    
+//    NSString *textFieldValue;
+//    NSInteger fieldInteger;
+//    
+//    if (textField == self.workPeriodTitleField) {
+//        textFieldValue = self.workPeriodTitleField.text;
+//        fieldInteger = 0;
+//    }
+//    
+//    if (textField == self.workPeriodDescriptionField){
+//        textFieldValue = self.workPeriodDescriptionField.text;
+//        fieldInteger = 1;
+//    }
+//    
+//    
+//    [self.delegate selectorDidModifyTextField:textFieldValue fieldModified:fieldInteger];
+//    
+//    return YES;
+//}
+//
+//-(NSString *) selectorDidModifyTextField:(NSString *)textFieldValue fieldModified:(NSInteger)fieldInteger{
+//    workperiod.periodTitle = textFieldValue;
+//    workperiod.description = textFieldValue;
+//}
 
 @end

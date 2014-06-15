@@ -176,8 +176,10 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 
     POAddToProjectViewController *selectorController = [POAddToProjectViewController new];
     selectorController.delegate = self;
+    selectorController.title = @"Select Project";
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:selectorController];
     
-    [self.tabBarController presentViewController:selectorController animated:YES completion:nil];
+    [self.tabBarController presentViewController:nav animated:YES completion:nil];
     
 //    projectToAddTo.projectTitle = @"Pomodoro To Project";
 //    projectToAddTo.projectDescription = @"Testing";
@@ -195,6 +197,7 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
     workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
+    workPeriodToAdd.duration = [workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime];
     workPeriodToAdd.periodTitle = @"work period";
     workPeriodToAdd.description = @"from pomodoro";
     
