@@ -72,7 +72,7 @@ static NSString * const createdKey = @"created";
 }
 
 - (void)startNewWorkPeriod{
-    WorkPeriod *workPeriod = [WorkPeriod new];
+    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:<#(NSManagedObjectContext *)#>];
     workPeriod.startTime = [NSDate date];
     workPeriod.periodTitle = @"work period";
     //workPeriod.description = @" ";

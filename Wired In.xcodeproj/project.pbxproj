@@ -28,6 +28,7 @@
 		3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */; };
 		3C835C4D1950E0EE0045E6B1 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C4C1950E0EE0045E6B1 /* WorkPeriod.m */; };
 		3C835C501950E0EF0045E6B1 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C4F1950E0EF0045E6B1 /* Project.m */; };
+		3C835C531950F57D0045E6B1 /* ProjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C521950F57D0045E6B1 /* ProjectController.m */; };
 		3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */; };
 		3CA06878194A429F00DB24CA /* POAddToProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */; };
 		7141B2E6193DBDFD0084F9F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E5193DBDFD0084F9F1 /* Foundation.framework */; };
@@ -89,6 +90,8 @@
 		3C835C4C1950E0EE0045E6B1 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
 		3C835C4E1950E0EF0045E6B1 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		3C835C4F1950E0EF0045E6B1 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		3C835C511950F57D0045E6B1 /* ProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectController.h; sourceTree = "<group>"; };
+		3C835C521950F57D0045E6B1 /* ProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectController.m; sourceTree = "<group>"; };
 		3CA06874194A429F00DB24CA /* POAddToProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAddToProjectViewController.h; sourceTree = "<group>"; };
 		3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAddToProjectViewController.m; sourceTree = "<group>"; };
 		3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POAddToProjectViewController.xib; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 			children = (
 				3C835C4E1950E0EF0045E6B1 /* Project.h */,
 				3C835C4F1950E0EF0045E6B1 /* Project.m */,
+				3C835C511950F57D0045E6B1 /* ProjectController.h */,
+				3C835C521950F57D0045E6B1 /* ProjectController.m */,
 				3C3A8F2519439431004C2E0A /* TTProject.h */,
 				3C3A8F2619439431004C2E0A /* TTProject.m */,
 				3C3A8F2219439417004C2E0A /* TTProjectController.h */,
@@ -429,6 +434,7 @@
 				3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */,
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
 				3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */,
+				3C835C531950F57D0045E6B1 /* ProjectController.m in Sources */,
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,
 				3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */,
