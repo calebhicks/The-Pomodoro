@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "TTProject.h"
-#import "TTWorkPeriod.h"
+#import "WorkPeriod.h"
 
 @interface TTAddCustomWorkPeriodViewController : UIViewController
 
 @property (strong, nonatomic) TTProject *project;
-//@property (strong, nonatomic) TTWorkPeriod  *workPeriod;
+//@property (strong, nonatomic) WorkPeriod  *workPeriod;
 
 @end

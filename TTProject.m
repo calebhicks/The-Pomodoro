@@ -31,7 +31,7 @@ static NSString * const createdKey = @"created";
     if (self.workPeriods){
         
         NSMutableArray *periods = [NSMutableArray new];
-        for (TTWorkPeriod *period in self.workPeriods) {
+        for (WorkPeriod *period in self.workPeriods) {
             [periods addObject:[period workPeriodDictionary]];
         }
         [entryDictionary setObject:periods forKey:periodsKey];
@@ -54,7 +54,7 @@ static NSString * const createdKey = @"created";
         NSArray *workPeriodDictionaries = dictionary[periodsKey];
         NSMutableArray *workPeriods = [NSMutableArray new];
         for (NSDictionary *workPeriodDictionary in workPeriodDictionaries) {
-            TTWorkPeriod *workPeriod = [[TTWorkPeriod alloc] initWithDictionary:workPeriodDictionary];
+            WorkPeriod *workPeriod = [[WorkPeriod alloc] initWithDictionary:workPeriodDictionary];
             [workPeriods addObject:workPeriod];
             }
         self.workPeriods = workPeriods;
@@ -72,7 +72,7 @@ static NSString * const createdKey = @"created";
 }
 
 - (void)startNewWorkPeriod{
-    TTWorkPeriod *workPeriod = [TTWorkPeriod new];
+    WorkPeriod *workPeriod = [WorkPeriod new];
     workPeriod.startTime = [NSDate date];
     workPeriod.periodTitle = @"work period";
     //workPeriod.description = @" ";
@@ -90,7 +90,7 @@ static NSString * const createdKey = @"created";
     [[TTProjectController sharedInstance]synchronize];
 }
 
-- (void)addRoundAsWorkPeriod:(TTWorkPeriod *)workPeriod{
+- (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod{
     NSMutableArray *mutableWorkPeriods = [NSMutableArray arrayWithArray:self.workPeriods];
     [mutableWorkPeriods addObject:workPeriod];
     self.workPeriods = mutableWorkPeriods;
@@ -99,7 +99,7 @@ static NSString * const createdKey = @"created";
 
 - (void)updateDuration{
 
-    self.currentWorkPeriod.duration = [self.currentWorkPeriod.finishTime timeIntervalSinceDate:self.currentWorkPeriod.startTime];
+    self.currentWorkPeriod.duration = [NSNumber numberWithDouble:[self.currentWorkPeriod.finishTime timeIntervalSinceDate:self.currentWorkPeriod.startTime]];
 
     [self updateTotalDuration];
     
@@ -111,9 +111,9 @@ static NSString * const createdKey = @"created";
     NSInteger timeInteger = totalDuration;
 
     
-    for (TTWorkPeriod *workPeriod in self.workPeriods) {
-        
-        timeInteger += workPeriod.duration;
+    for (WorkPeriod *workPeriod in self.workPeriods) {
+    
+        timeInteger += [workPeriod.duration integerValue];
         
     }
     

@@ -26,6 +26,8 @@
 		3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F3F9519400A0000CF6D20 /* POAppearance.m */; };
 		3C835C3D194D47FC0045E6B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C835C3C194D47FC0045E6B1 /* CoreData.framework */; };
 		3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */; };
+		3C835C4D1950E0EE0045E6B1 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C4C1950E0EE0045E6B1 /* WorkPeriod.m */; };
+		3C835C501950E0EF0045E6B1 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C4F1950E0EF0045E6B1 /* Project.m */; };
 		3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */; };
 		3CA06878194A429F00DB24CA /* POAddToProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */; };
 		7141B2E6193DBDFD0084F9F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7141B2E5193DBDFD0084F9F1 /* Foundation.framework */; };
@@ -53,7 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C00EAD71946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAddCustomWorkPeriodViewController.h; sourceTree = "<group>"; };
+		3C00EAD71946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTAddCustomWorkPeriodViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3C00EAD81946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAddCustomWorkPeriodViewController.m; sourceTree = "<group>"; };
 		3C00EAD91946AC7A00E2BC87 /* TTAddCustomWorkPeriodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAddCustomWorkPeriodViewController.xib; sourceTree = "<group>"; };
 		3C3A8F1719437E85004C2E0A /* TTListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListTableViewController.h; sourceTree = "<group>"; };
@@ -61,14 +63,14 @@
 		3C3A8F1919437E85004C2E0A /* TTListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTListTableViewController.xib; sourceTree = "<group>"; };
 		3C3A8F1C19438CF9004C2E0A /* TTListTableViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTListTableViewDatasource.h; sourceTree = "<group>"; };
 		3C3A8F1D19438CF9004C2E0A /* TTListTableViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTListTableViewDatasource.m; sourceTree = "<group>"; };
-		3C3A8F2219439417004C2E0A /* TTProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProjectController.h; sourceTree = "<group>"; };
+		3C3A8F2219439417004C2E0A /* TTProjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTProjectController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		3C3A8F2319439417004C2E0A /* TTProjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProjectController.m; sourceTree = "<group>"; };
-		3C3A8F2519439431004C2E0A /* TTProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProject.h; sourceTree = "<group>"; };
-		3C3A8F2619439431004C2E0A /* TTProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProject.m; sourceTree = "<group>"; };
-		3C3A8F281943986C004C2E0A /* TTWorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTWorkPeriod.h; sourceTree = "<group>"; };
-		3C3A8F291943986C004C2E0A /* TTWorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTWorkPeriod.m; sourceTree = "<group>"; };
+		3C3A8F2519439431004C2E0A /* TTProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTProject.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3C3A8F2619439431004C2E0A /* TTProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTProject.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3C3A8F281943986C004C2E0A /* TTWorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TTWorkPeriod.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3C3A8F291943986C004C2E0A /* TTWorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTWorkPeriod.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3C3A8F3119439DB7004C2E0A /* TTProjectDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTProjectDetailViewController.h; sourceTree = "<group>"; };
-		3C3A8F3219439DB7004C2E0A /* TTProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTProjectDetailViewController.m; sourceTree = "<group>"; };
+		3C3A8F3219439DB7004C2E0A /* TTProjectDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTProjectDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3C3A8F3319439DB7004C2E0A /* TTProjectDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTProjectDetailViewController.xib; sourceTree = "<group>"; };
 		3C3AC7871942B3C800BCBA6B /* POIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIntroViewController.h; path = ../POIntroViewController.h; sourceTree = "<group>"; };
 		3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIntroViewController.m; path = ../POIntroViewController.m; sourceTree = "<group>"; };
@@ -77,12 +79,16 @@
 		3C413961193EB90E00A4F262 /* POTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POTimerViewController.m; path = ../POTimerViewController.m; sourceTree = "<group>"; };
 		3C413962193EB90E00A4F262 /* POTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POTimerViewController.xib; path = ../POTimerViewController.xib; sourceTree = "<group>"; };
 		3C413965193EB92E00A4F262 /* POListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POListViewController.h; path = ../POListViewController.h; sourceTree = "<group>"; };
-		3C413966193EB92E00A4F262 /* POListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POListViewController.m; path = ../POListViewController.m; sourceTree = "<group>"; };
+		3C413966193EB92E00A4F262 /* POListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = POListViewController.m; path = ../POListViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3C413967193EB92E00A4F262 /* POListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POListViewController.xib; path = ../POListViewController.xib; sourceTree = "<group>"; };
-		3C6F3F9419400A0000CF6D20 /* POAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAppearance.h; sourceTree = "<group>"; };
-		3C6F3F9519400A0000CF6D20 /* POAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAppearance.m; sourceTree = "<group>"; };
+		3C6F3F9419400A0000CF6D20 /* POAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POAppearance.h; path = "The Pomodoro/POAppearance.h"; sourceTree = "<group>"; };
+		3C6F3F9519400A0000CF6D20 /* POAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POAppearance.m; path = "The Pomodoro/POAppearance.m"; sourceTree = "<group>"; };
 		3C835C3C194D47FC0045E6B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObjectModel.xcdatamodel; sourceTree = "<group>"; };
+		3C835C4B1950E0EE0045E6B1 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
+		3C835C4C1950E0EE0045E6B1 /* WorkPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkPeriod.m; sourceTree = "<group>"; };
+		3C835C4E1950E0EF0045E6B1 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
+		3C835C4F1950E0EF0045E6B1 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		3CA06874194A429F00DB24CA /* POAddToProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POAddToProjectViewController.h; sourceTree = "<group>"; };
 		3CA06875194A429F00DB24CA /* POAddToProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POAddToProjectViewController.m; sourceTree = "<group>"; };
 		3CA06876194A429F00DB24CA /* POAddToProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = POAddToProjectViewController.xib; sourceTree = "<group>"; };
@@ -94,8 +100,8 @@
 		7141B2EF193DBDFD0084F9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7141B2F1193DBDFD0084F9F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7141B2F3193DBDFD0084F9F1 /* Wired In-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wired In-Prefix.pch"; sourceTree = "<group>"; };
-		7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POAppDelegate.h; sourceTree = "<group>"; };
-		7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POAppDelegate.m; sourceTree = "<group>"; };
+		7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = POAppDelegate.h; path = "The Pomodoro/POAppDelegate.h"; sourceTree = "<group>"; };
+		7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = POAppDelegate.m; path = "The Pomodoro/POAppDelegate.m"; sourceTree = "<group>"; };
 		7141B2F7193DBDFD0084F9F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7141B2FD193DBDFE0084F9F1 /* Wired InTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wired InTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7141B2FE193DBDFE0084F9F1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -143,6 +149,8 @@
 		3C3A8F2E19439D6C004C2E0A /* Project Object */ = {
 			isa = PBXGroup;
 			children = (
+				3C835C4E1950E0EF0045E6B1 /* Project.h */,
+				3C835C4F1950E0EF0045E6B1 /* Project.m */,
 				3C3A8F2519439431004C2E0A /* TTProject.h */,
 				3C3A8F2619439431004C2E0A /* TTProject.m */,
 				3C3A8F2219439417004C2E0A /* TTProjectController.h */,
@@ -154,6 +162,8 @@
 		3C3A8F2F19439D73004C2E0A /* Work Period Object */ = {
 			isa = PBXGroup;
 			children = (
+				3C835C4B1950E0EE0045E6B1 /* WorkPeriod.h */,
+				3C835C4C1950E0EE0045E6B1 /* WorkPeriod.m */,
 				3C3A8F281943986C004C2E0A /* TTWorkPeriod.h */,
 				3C3A8F291943986C004C2E0A /* TTWorkPeriod.m */,
 			);
@@ -228,6 +238,11 @@
 		7141B2D9193DBDFD0084F9F1 = {
 			isa = PBXGroup;
 			children = (
+				7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */,
+				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
+				3C6F3F9419400A0000CF6D20 /* POAppearance.h */,
+				3C6F3F9519400A0000CF6D20 /* POAppearance.m */,
+				3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */,
 				3C3A8F1619437E2F004C2E0A /* Project List */,
 				7141B2EB193DBDFD0084F9F1 /* The Pomodoro */,
 				7141B304193DBDFE0084F9F1 /* The PomodoroTests */,
@@ -260,16 +275,11 @@
 		7141B2EB193DBDFD0084F9F1 /* The Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				7141B2F4193DBDFD0084F9F1 /* POAppDelegate.h */,
-				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
-				3C6F3F9419400A0000CF6D20 /* POAppearance.h */,
-				3C6F3F9519400A0000CF6D20 /* POAppearance.m */,
 				3C413955193EAE6000A4F262 /* Timer */,
 				3C413956193EAE7900A4F262 /* List */,
 				3CA06879194A42AC00DB24CA /* Add Round to Project */,
 				3C3AC7811942B10100BCBA6B /* Intro */,
 				7141B2F7193DBDFD0084F9F1 /* Images.xcassets */,
-				3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */,
 				7141B2EC193DBDFD0084F9F1 /* Supporting Files */,
 			);
 			path = "The Pomodoro";
@@ -423,7 +433,9 @@
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,
 				3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */,
 				3C3A8F3419439DB7004C2E0A /* TTProjectDetailViewController.m in Sources */,
+				3C835C4D1950E0EE0045E6B1 /* WorkPeriod.m in Sources */,
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,
+				3C835C501950E0EF0045E6B1 /* Project.m in Sources */,
 				3C413968193EB92E00A4F262 /* POListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,7 +659,8 @@
 				3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */,
 			);
 			currentVersion = 3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */;
-			path = ObjectModel.xcdatamodeld;
+			name = ObjectModel.xcdatamodeld;
+			path = "The Pomodoro/ObjectModel.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

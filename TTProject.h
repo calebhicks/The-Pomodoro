@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TTWorkPeriod.h"
+#import "WorkPeriod.h"
 
 @interface TTProject : NSObject
 
@@ -17,12 +17,12 @@
 @property (strong, nonatomic) NSDate *dateCreated;
 @property (assign, nonatomic) NSTimeInterval totalDuration;
 
-@property (strong, nonatomic) TTWorkPeriod *currentWorkPeriod;
+@property (strong, nonatomic) WorkPeriod *currentWorkPeriod;
 
 - (NSDictionary *)projectDictionary;
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
-- (void)addRoundAsWorkPeriod:(TTWorkPeriod *)workPeriod;
+- (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod;
 - (void)addWorkPeriod;
 - (void)startNewWorkPeriod;
 - (void)endCurrentWorkPeriod;

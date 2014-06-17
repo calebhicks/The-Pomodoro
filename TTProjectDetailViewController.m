@@ -8,7 +8,7 @@
 
 #import "TTProjectDetailViewController.h"
 #import "TTProjectController.h"
-#import "TTWorkPeriod.h"
+#import "WorkPeriod.h"
 #import "TTAddCustomWorkPeriodViewController.h"
 @import MessageUI;
 
@@ -81,7 +81,7 @@
     
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"workperiodcell"];
     
-    TTWorkPeriod *tempWorkPeriod = [self.project.workPeriods objectAtIndex:indexPath.row];
+    WorkPeriod *tempWorkPeriod = [self.project.workPeriods objectAtIndex:indexPath.row];
     
     NSDateFormatter *startDateFormatter = [NSDateFormatter new];
     [startDateFormatter setTimeStyle:NSDateFormatterShortStyle];
@@ -129,7 +129,7 @@
     
     TTAddCustomWorkPeriodViewController *addCustomWorkPeriodViewController = [[TTAddCustomWorkPeriodViewController alloc]init];
     
-    TTWorkPeriod *workPeriodToBeAdded = [[TTWorkPeriod alloc]init];
+    WorkPeriod *workPeriodToBeAdded = [[WorkPeriod alloc]init];
     
     self.project.currentWorkPeriod = workPeriodToBeAdded;
     
@@ -190,7 +190,7 @@
     [emailDateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
     
-    for (TTWorkPeriod *workPeriod in self.project.workPeriods) {
+    for (WorkPeriod *workPeriod in self.project.workPeriods) {
         
         if (stringFromArray) {
             if (workPeriod.duration) {

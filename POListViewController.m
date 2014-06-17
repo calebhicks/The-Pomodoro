@@ -193,13 +193,13 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     
-    TTWorkPeriod *workPeriodToAdd = [[TTWorkPeriod alloc]init];
+    WorkPeriod *workPeriodToAdd = [[WorkPeriod alloc]init];
     
     workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
     workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
-    workPeriodToAdd.duration = [workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime];
+    workPeriodToAdd.duration = [NSNumber numberWithDouble:[workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime]];
     workPeriodToAdd.periodTitle = @"work period";
-    workPeriodToAdd.description = @"from pomodoro";
+    workPeriodToAdd.periodDescription = @"from pomodoro";
     
     [project addRoundAsWorkPeriod:workPeriodToAdd];
     
