@@ -8,6 +8,7 @@
 
 #import "TTProject.h"
 #import "TTProjectController.h"
+#import "POAppDelegate.h"
 
 static NSString * const titleKey = @"title";
 static NSString * const descriptionKey = @"description";
@@ -72,7 +73,12 @@ static NSString * const createdKey = @"created";
 }
 
 - (void)startNewWorkPeriod{
-    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:<#(NSManagedObjectContext *)#>];
+    
+    POAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    NSManagedObjectContext *managedObjectContext = appDelegate.managedObjectContext;
+    
+    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:managedObjectContext];
     workPeriod.startTime = [NSDate date];
     workPeriod.periodTitle = @"work period";
     //workPeriod.description = @" ";

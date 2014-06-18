@@ -98,7 +98,7 @@
     }
     
     if(self.project.currentWorkPeriod.duration){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", tempWorkPeriod.duration];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", tempWorkPeriod.duration];
     }
     
     return cell;
