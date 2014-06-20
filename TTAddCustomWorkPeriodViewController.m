@@ -8,6 +8,7 @@
 
 #import "TTAddCustomWorkPeriodViewController.h"
 #import "CoreDataHelper.h"
+#import "ProjectController.h"
 
 @interface TTAddCustomWorkPeriodViewController ()
 
@@ -69,9 +70,11 @@
 
 - (IBAction)addWorkPeriodButtonPressed:(id)sender {
     
-    [self.project addWorkPeriodsObject:self.workPeriod];
+    self.workPeriod.project = self.project;
     
     [self.project updateDuration];
+    
+    [[ProjectController sharedInstance]synchronize];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

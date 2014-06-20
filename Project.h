@@ -22,7 +22,7 @@
 - (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod;
 - (void)addWorkPeriod:(WorkPeriod *)workPeriod;
 - (void)startNewWorkPeriod;
-- (void)endWorkPeriod:(WorkPeriod *)workPeriod;
+- (void)endWorkPeriod;
 - (void)updateDuration;
 
 @end
@@ -39,4 +39,5 @@
 - (void)removeWorkPeriodsObject:(WorkPeriod *)value;
 - (void)addWorkPeriods:(NSOrderedSet *)values;
 - (void)removeWorkPeriods:(NSOrderedSet *)values;
+
 @end

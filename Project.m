@@ -17,6 +17,13 @@ static NSString * const descriptionKey = @"description";
 static NSString * const periodsKey = @"periods";
 static NSString * const createdKey = @"created";
 
+@interface Project()
+
+@property (nonatomic, weak) WorkPeriod *workPeriod;
+
+@end
+
+
 @implementation Project
 
 @dynamic dateCreated;
@@ -24,6 +31,7 @@ static NSString * const createdKey = @"created";
 @dynamic projectTitle;
 @dynamic totalDuration;
 @dynamic workPeriods;
+@synthesize workPeriod;
 
 - (NSDictionary *)projectDictionary{
     
@@ -75,7 +83,9 @@ static NSString * const createdKey = @"created";
 
 - (void)addWorkPeriod:(WorkPeriod *)workPeriod{
 
-    [self addWorkPeriodsObject:workPeriod];
+    self.workPeriod = workPeriod;
+    
+    self.workPeriod.project = self;
     
 //    NSMutableOrderedSet *mutableWorkPeriods = [NSMutableOrderedSet orderedSetWithOrderedSet:self.workPeriods];
 //    [mutableWorkPeriods addObject:self.currentWorkPeriod];
@@ -85,26 +95,25 @@ static NSString * const createdKey = @"created";
 
 - (void)startNewWorkPeriod{
     
-    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:[[CoreDataHelper sharedInstance] managedObjectContext]];
-    workPeriod.startTime = [NSDate date];
-    workPeriod.periodTitle = @"work period";
+    self.workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:[[CoreDataHelper sharedInstance] managedObjectContext]];
+    self.workPeriod.startTime = [NSDate date];
+    self.workPeriod.periodTitle = @"work period";
     //workPeriod.description = @" ";
-    
-    [self addWorkPeriodsObject:workPeriod];
+    self.workPeriod.project = self;
     
     [[ProjectController sharedInstance]synchronize];
     
 }
 
-- (void)endWorkPeriod:(WorkPeriod *)workPeriod{
-    workPeriod.finishTime = [NSDate date];
+- (void)endWorkPeriod{
+    self.workPeriod.finishTime = [NSDate date];
     [self updateDuration];
     [[ProjectController sharedInstance]synchronize];
 }
 
 - (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod{
 
-    [self addWorkPeriodsObject:workPeriod];
+    self.workPeriod.project = self;
     
 //    NSMutableOrderedSet *mutableWorkPeriods = [NSMutableOrderedSet orderedSetWithOrderedSet:self.workPeriods];
 //    [mutableWorkPeriods addObject:workPeriod];

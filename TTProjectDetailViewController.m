@@ -223,7 +223,7 @@
 }
 
 - (void) endCurrentWorkPeriod{
-    [self.project endWorkPeriod:self.workPeriodToBeAdded];
+    [self.project endWorkPeriod];
     
     [self updateLabel];
     
