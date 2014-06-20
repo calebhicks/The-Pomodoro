@@ -13,4 +13,16 @@
 
 + (Project *)defaultProjectContext:(NSManagedObjectContext *)managedObjectContext;
 
+@property (strong, nonatomic, readonly) NSArray *projects;
+
++(ProjectController *)sharedInstance;
+
+-(void)addProject:(Project *)project;
+
+-(void)removeProject:(Project *)project;
+
+-(void) loadFromCoreData;
+
+-(void) synchronize;
+
 @end

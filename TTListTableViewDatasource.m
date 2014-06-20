@@ -7,8 +7,8 @@
 //
 
 #import "TTListTableViewDatasource.h"
-#import "TTProject.h"
-#import "TTProjectController.h"
+#import "Project.h"
+#import "ProjectController.h"
 
 @interface TTListTableViewDatasource() 
 
@@ -19,7 +19,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     
-    TTProject *project = [TTProjectController sharedInstance].projects[indexPath.row];
+    Project *project = [ProjectController sharedInstance].projects[indexPath.row];
     cell.textLabel.text = project.projectTitle;
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
@@ -35,7 +35,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[TTProjectController sharedInstance].projects count];
+    return [[ProjectController sharedInstance].projects count];
 }
 
 

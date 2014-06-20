@@ -8,8 +8,9 @@
 
 #import "TTListTableViewController.h"
 #import "TTListTableViewDatasource.h"
-#import "TTProjectController.h"
+#import "ProjectController.h"
 #import "TTProjectDetailViewController.h"
+#import "CoreDataHelper.h"
 
 @interface TTListTableViewController () <UITableViewDelegate>
 
@@ -61,10 +62,10 @@
 }
 
 - (void)newProject{
-    TTProject *project = [TTProject new];
+    Project *project = [NSEntityDescription insertNewObjectForEntityForName:@"Project" inManagedObjectContext:[[CoreDataHelper sharedInstance]managedObjectContext]];
     project.dateCreated = [NSDate date];
     
-    [[TTProjectController sharedInstance] addProject:project];
+    [[ProjectController sharedInstance] addProject:project];
     
     TTProjectDetailViewController *projectView = [[TTProjectDetailViewController alloc]init];
     
@@ -81,7 +82,7 @@
     
     TTProjectDetailViewController *projectView = [[TTProjectDetailViewController alloc]init];
     
-    projectView.project = [TTProjectController sharedInstance].projects[indexPath.row];
+    projectView.project = [ProjectController sharedInstance].projects[indexPath.row];
     
     //projectView.title = projectView.project.projectTitle;
     

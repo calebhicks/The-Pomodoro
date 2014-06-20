@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTProject.h"
+#import "Project.h"
 
 @protocol SelectorDelegate <NSObject>
 
--(void) selectorDidSelectProject:(TTProject *)project;
+-(void) selectorDidSelectProject:(Project *)project;
 
 @end
 

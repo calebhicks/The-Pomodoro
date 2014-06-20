@@ -18,6 +18,13 @@
 @property (nonatomic, retain) NSString * projectTitle;
 @property (nonatomic, retain) NSNumber * totalDuration;
 @property (nonatomic, retain) NSOrderedSet *workPeriods;
+
+- (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod;
+- (void)addWorkPeriod;
+- (void)startNewWorkPeriod;
+- (void)endCurrentWorkPeriod;
+- (void)updateDuration;
+
 @end
 
 @interface Project (CoreDataGeneratedAccessors)

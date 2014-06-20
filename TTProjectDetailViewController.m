@@ -7,7 +7,7 @@
 //
 
 #import "TTProjectDetailViewController.h"
-#import "TTProjectController.h"
+#import "ProjectController.h"
 #import "WorkPeriod.h"
 #import "TTAddCustomWorkPeriodViewController.h"
 @import MessageUI;
@@ -97,9 +97,9 @@
         cell.textLabel.text = [NSString stringWithFormat:@"%@ - running", [startDateFormatter stringFromDate:tempWorkPeriod.startTime]];
     }
     
-    if(self.project.currentWorkPeriod.duration){
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", tempWorkPeriod.duration];
-    }
+//    if(self.project.currentWorkPeriod.duration){
+//        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", tempWorkPeriod.duration];
+//    }
     
     return cell;
 }
@@ -115,7 +115,7 @@
     
     [self.workPeriodTableView reloadData];
     
-    [[TTProjectController sharedInstance]synchronize];
+    [[ProjectController sharedInstance]synchronize];
     
     return YES;
 }
@@ -131,7 +131,7 @@
     
     WorkPeriod *workPeriodToBeAdded = [[WorkPeriod alloc]init];
     
-    self.project.currentWorkPeriod = workPeriodToBeAdded;
+    //self.project.currentWorkPeriod = workPeriodToBeAdded;
     
     addCustomWorkPeriodViewController.project = self.project;
     
@@ -234,16 +234,16 @@
 
 - (void)updateLabel {
     
-    NSTimeInterval projectDuration = self.project.totalDuration;
-    NSInteger projectDurationInteger = projectDuration;
-    NSInteger countdown = projectDuration;
+    NSNumber *projectDuration = self.project.totalDuration;
+    NSInteger projectDurationInteger = [projectDuration integerValue];
+    NSInteger countdown = [projectDuration integerValue];
     
     NSInteger hours;
     NSInteger minutes;
     NSInteger seconds;
 
     if(projectDurationInteger > 3600){
-        hours = floor(projectDuration/3600);
+        hours = floor([projectDuration integerValue]/3600);
         countdown -= hours*3600;
     } else{
         hours = 0;

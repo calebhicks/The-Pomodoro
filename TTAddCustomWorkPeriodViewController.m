@@ -36,12 +36,12 @@
     
     self.finishTimePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:self.maxDateBeforeNow];
     
-    if (self.project.currentWorkPeriod.startTime) {
-        [self.startTimePicker setDate:self.project.currentWorkPeriod.startTime animated:YES];
+    if (self.workPeriod.startTime) {
+        [self.startTimePicker setDate:self.workPeriod.startTime animated:YES];
     }
     
-    if (self.project.currentWorkPeriod.finishTime) {
-        [self.finishTimePicker setDate:self.project.currentWorkPeriod.finishTime animated:YES];
+    if (self.workPeriod.finishTime) {
+        [self.finishTimePicker setDate:self.workPeriod.finishTime animated:YES];
     }
 
 }
@@ -53,14 +53,14 @@
 }
 
 - (IBAction)startTimePickerChanged:(id)sender {
-    self.project.currentWorkPeriod.startTime = self.startTimePicker.date;
-    [self.finishTimePicker setMinimumDate:self.project.currentWorkPeriod.startTime];
-    [self.finishTimePicker setDate:self.project.currentWorkPeriod.startTime animated:YES];
+    self.workPeriod.startTime = self.startTimePicker.date;
+    [self.finishTimePicker setMinimumDate:self.workPeriod.startTime];
+    [self.finishTimePicker setDate:self.workPeriod.startTime animated:YES];
 }
 
 
 - (IBAction)finishTimePickerChanged:(id)sender {
-    self.project.currentWorkPeriod.finishTime = self.finishTimePicker.date;
+    self.workPeriod.finishTime = self.finishTimePicker.date;
 }
 
 - (IBAction)addWorkPeriodButtonPressed:(id)sender {

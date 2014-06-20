@@ -24,6 +24,7 @@
 		3C413968193EB92E00A4F262 /* POListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413966193EB92E00A4F262 /* POListViewController.m */; };
 		3C413969193EB92E00A4F262 /* POListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413967193EB92E00A4F262 /* POListViewController.xib */; };
 		3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6F3F9519400A0000CF6D20 /* POAppearance.m */; };
+		3C73A2F91954C7FA00C17C21 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73A2F81954C7FA00C17C21 /* CoreDataHelper.m */; };
 		3C835C3D194D47FC0045E6B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C835C3C194D47FC0045E6B1 /* CoreData.framework */; };
 		3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */; };
 		3C835C4D1950E0EE0045E6B1 /* WorkPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C835C4C1950E0EE0045E6B1 /* WorkPeriod.m */; };
@@ -84,6 +85,8 @@
 		3C413967193EB92E00A4F262 /* POListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POListViewController.xib; path = ../POListViewController.xib; sourceTree = "<group>"; };
 		3C6F3F9419400A0000CF6D20 /* POAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POAppearance.h; path = "The Pomodoro/POAppearance.h"; sourceTree = "<group>"; };
 		3C6F3F9519400A0000CF6D20 /* POAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POAppearance.m; path = "The Pomodoro/POAppearance.m"; sourceTree = "<group>"; };
+		3C73A2F71954C7FA00C17C21 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		3C73A2F81954C7FA00C17C21 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		3C835C3C194D47FC0045E6B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3C835C3F194D48A70045E6B1 /* ObjectModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ObjectModel.xcdatamodel; sourceTree = "<group>"; };
 		3C835C4B1950E0EE0045E6B1 /* WorkPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkPeriod.h; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				7141B2F5193DBDFD0084F9F1 /* POAppDelegate.m */,
 				3C6F3F9419400A0000CF6D20 /* POAppearance.h */,
 				3C6F3F9519400A0000CF6D20 /* POAppearance.m */,
+				3C73A2F71954C7FA00C17C21 /* CoreDataHelper.h */,
+				3C73A2F81954C7FA00C17C21 /* CoreDataHelper.m */,
 				3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */,
 				3C3A8F1619437E2F004C2E0A /* Project List */,
 				7141B2EB193DBDFD0084F9F1 /* The Pomodoro */,
@@ -438,6 +443,7 @@
 				7141B2F2193DBDFD0084F9F1 /* main.m in Sources */,
 				3C6F3F9619400A0000CF6D20 /* POAppearance.m in Sources */,
 				3CA06877194A429F00DB24CA /* POAddToProjectViewController.m in Sources */,
+				3C73A2F91954C7FA00C17C21 /* CoreDataHelper.m in Sources */,
 				3C3A8F3419439DB7004C2E0A /* TTProjectDetailViewController.m in Sources */,
 				3C835C4D1950E0EE0045E6B1 /* WorkPeriod.m in Sources */,
 				7141B2F6193DBDFD0084F9F1 /* POAppDelegate.m in Sources */,

@@ -8,8 +8,8 @@
 
 #import "POListViewController.h"
 #import "POTimerViewController.h"
-#import "TTProjectController.h"
-#import "TTProject.h"
+#import "ProjectController.h"
+#import "Project.h"
 #import "POAddToProjectViewController.h"
 
 static NSString * const CurrentRoundKey = @"CurrentRound";
@@ -172,7 +172,6 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
 }
 
 - (void) addRoundToNewProject{
-//    TTProject *projectToAddTo = [[TTProject alloc]init];
 
     POAddToProjectViewController *selectorController = [POAddToProjectViewController new];
     selectorController.delegate = self;
@@ -181,27 +180,21 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [self.tabBarController presentViewController:nav animated:YES completion:nil];
     
-//    projectToAddTo.projectTitle = @"Pomodoro To Project";
-//    projectToAddTo.projectDescription = @"Testing";
-//    projectToAddTo.currentWorkPeriod = workPeriodToAdd;
-//    projectToAddTo.dateCreated = [NSDate date];
-    
-//    [[TTProjectController sharedInstance]addProject:projectToAddTo];
 }
 
-- (void)selectorDidSelectProject:(TTProject *)project{
+- (void)selectorDidSelectProject:(Project *)project{
     
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     
-    WorkPeriod *workPeriodToAdd = [[WorkPeriod alloc]init];
-    
-    workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
-    workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
-    workPeriodToAdd.duration = [NSNumber numberWithDouble:[workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime]];
-    workPeriodToAdd.periodTitle = @"work period";
-    workPeriodToAdd.periodDescription = @"from pomodoro";
-    
-    [project addRoundAsWorkPeriod:workPeriodToAdd];
+//    WorkPeriod *workPeriodToAdd = [[WorkPeriod alloc]init];
+//    
+//    workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
+//    workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
+//    workPeriodToAdd.duration = [NSNumber numberWithDouble:[workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime]];
+//    workPeriodToAdd.periodTitle = @"work period";
+//    workPeriodToAdd.periodDescription = @"from pomodoro";
+//    
+//    [project addRoundAsWorkPeriod:workPeriodToAdd];
     
 }
 @end

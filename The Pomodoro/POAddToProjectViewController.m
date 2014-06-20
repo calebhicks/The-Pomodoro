@@ -7,7 +7,7 @@
 //
 
 #import "POAddToProjectViewController.h"
-#import "TTProjectController.h"
+#import "ProjectController.h"
 
 @interface POAddToProjectViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -54,7 +54,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     
-    TTProject *project = [TTProjectController sharedInstance].projects[indexPath.row];
+    Project *project = [ProjectController sharedInstance].projects[indexPath.row];
     cell.textLabel.text = project.projectTitle;
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
@@ -71,7 +71,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [[TTProjectController sharedInstance].projects count];
+    return [[ProjectController sharedInstance].projects count];
 }
 
 
@@ -81,7 +81,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [self.delegate selectorDidSelectProject:[TTProjectController sharedInstance].projects[indexPath.row]];
+    [self.delegate selectorDidSelectProject:[ProjectController sharedInstance].projects[indexPath.row]];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTProject.h"
+#import "Project.h"
 
 @interface TTProjectDetailViewController : UIViewController
 
-@property TTProject *project;
+@property Project *project;
 
 @end
