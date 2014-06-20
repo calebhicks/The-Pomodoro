@@ -7,6 +7,7 @@
 //
 
 #import "TTAddCustomWorkPeriodViewController.h"
+#import "CoreDataHelper.h"
 
 @interface TTAddCustomWorkPeriodViewController ()
 
@@ -35,6 +36,9 @@
     [super viewDidLoad];
     
     self.finishTimePicker.maximumDate = [NSDate dateWithTimeIntervalSinceNow:self.maxDateBeforeNow];
+    
+    self.workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod"
+                                                    inManagedObjectContext:[[CoreDataHelper sharedInstance]managedObjectContext]];
     
     if (self.workPeriod.startTime) {
         [self.startTimePicker setDate:self.workPeriod.startTime animated:YES];
@@ -65,7 +69,7 @@
 
 - (IBAction)addWorkPeriodButtonPressed:(id)sender {
     
-    [self.project addWorkPeriod];
+    [self.project addWorkPeriodsObject:self.workPeriod];
     
     [self.project updateDuration];
     

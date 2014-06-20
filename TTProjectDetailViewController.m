@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *finishButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *reportButton;
 
+@property (weak, nonatomic) WorkPeriod *workPeriodToBeAdded;
+
 @end
 
 @implementation TTProjectDetailViewController
@@ -129,10 +131,6 @@
     
     TTAddCustomWorkPeriodViewController *addCustomWorkPeriodViewController = [[TTAddCustomWorkPeriodViewController alloc]init];
     
-    WorkPeriod *workPeriodToBeAdded = [[WorkPeriod alloc]init];
-    
-    //self.project.currentWorkPeriod = workPeriodToBeAdded;
-    
     addCustomWorkPeriodViewController.project = self.project;
     
 
@@ -225,7 +223,7 @@
 }
 
 - (void) endCurrentWorkPeriod{
-    [self.project endCurrentWorkPeriod];
+    [self.project endWorkPeriod:self.workPeriodToBeAdded];
     
     [self updateLabel];
     

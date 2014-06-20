@@ -20,9 +20,9 @@
 @property (nonatomic, retain) NSOrderedSet *workPeriods;
 
 - (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod;
-- (void)addWorkPeriod;
+- (void)addWorkPeriod:(WorkPeriod *)workPeriod;
 - (void)startNewWorkPeriod;
-- (void)endCurrentWorkPeriod;
+- (void)endWorkPeriod:(WorkPeriod *)workPeriod;
 - (void)updateDuration;
 
 @end

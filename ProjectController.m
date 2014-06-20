@@ -101,6 +101,9 @@ static NSString * const projectListKey = @"projectList";
 //        [projects addObject:[[Project alloc] initWithDictionary:project]];
 //    }
 //    self.projects = projects;
+    
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Project"];
+    self.projects = [[[CoreDataHelper sharedInstance]managedObjectContext] executeFetchRequest:request error:NULL];
 }
 
 @end

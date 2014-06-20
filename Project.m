@@ -10,6 +10,7 @@
 #import "WorkPeriod.h"
 #import "ProjectController.h"
 #import "POAppDelegate.h"
+#import "CoreDataHelper.h"
 
 static NSString * const titleKey = @"title";
 static NSString * const descriptionKey = @"description";
@@ -84,11 +85,7 @@ static NSString * const createdKey = @"created";
 
 - (void)startNewWorkPeriod{
     
-    POAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    
-    NSManagedObjectContext *managedObjectContext = appDelegate.managedObjectContext;
-    
-    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:managedObjectContext];
+    WorkPeriod *workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:[[CoreDataHelper sharedInstance] managedObjectContext]];
     workPeriod.startTime = [NSDate date];
     workPeriod.periodTitle = @"work period";
     //workPeriod.description = @" ";
@@ -101,7 +98,7 @@ static NSString * const createdKey = @"created";
 
 - (void)endWorkPeriod:(WorkPeriod *)workPeriod{
     workPeriod.finishTime = [NSDate date];
-    [self updateDuration:workPeriod];
+    [self updateDuration];
     [[ProjectController sharedInstance]synchronize];
 }
 
@@ -115,9 +112,9 @@ static NSString * const createdKey = @"created";
 //    [[ProjectController sharedInstance]synchronize];
 }
 
-- (void)updateDuration:(WorkPeriod *)workPeriod{
+- (void)updateDuration{
     
-    workPeriod.duration = [NSNumber numberWithDouble:[workPeriod.finishTime timeIntervalSinceDate:workPeriod.startTime]];
+//    workPeriod.duration = [NSNumber numberWithDouble:[workPeriod.finishTime timeIntervalSinceDate:workPeriod.startTime]];
     
     [self updateTotalDuration];
     
