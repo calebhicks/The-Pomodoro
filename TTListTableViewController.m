@@ -11,11 +11,13 @@
 #import "ProjectController.h"
 #import "TTProjectDetailViewController.h"
 #import "CoreDataHelper.h"
+#import "FetchedResultsControllerDataSource.h"
 
 @interface TTListTableViewController () <UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) TTListTableViewDatasource *dataSource;
+@property (strong, nonatomic) FetchedResultsControllerDataSource *fetchedResultsControllerDataSource;
 
 @end
 
@@ -35,11 +37,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
-    self.dataSource = [[TTListTableViewDatasource alloc]init];
-    self.tableView.dataSource = self.dataSource;
-    self.tableView.delegate = self;
-    [self registerTableView:self.tableView];
+//    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+//    self.dataSource = [[TTListTableViewDatasource alloc]init];
+//    self.tableView.dataSource = self.dataSource;
+//    self.tableView.delegate = self;
+//    [self registerTableView:self.tableView];
+    
+    self.fetchedResultsControllerDataSource =
+    [[FetchedResultsControllerDataSource alloc] initWithTableView:self.tableView];
+    self.fetchedResultsControllerDataSource.fetchedResultsController = self.parent.childrenFetchedResultsController;
+    fetchedResultsControllerDataSource.delegate = self;
+    fetchedResultsControllerDataSource.reuseIdentifier = @"Cell";
     
     UIBarButtonItem *addEntryButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(newProject)];
     

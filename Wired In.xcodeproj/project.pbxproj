@@ -19,6 +19,7 @@
 		3C3A8F3519439DB7004C2E0A /* TTProjectDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3A8F3319439DB7004C2E0A /* TTProjectDetailViewController.xib */; };
 		3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */; };
 		3C3AC78B1942B3C800BCBA6B /* POIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */; };
+		3C3DEE7B195DCA16008F69FE /* FetchedResultsControllerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3DEE7A195DCA16008F69FE /* FetchedResultsControllerDataSource.m */; };
 		3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413961193EB90E00A4F262 /* POTimerViewController.m */; };
 		3C413964193EB90E00A4F262 /* POTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C413962193EB90E00A4F262 /* POTimerViewController.xib */; };
 		3C413968193EB92E00A4F262 /* POListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C413966193EB92E00A4F262 /* POListViewController.m */; };
@@ -77,6 +78,8 @@
 		3C3AC7871942B3C800BCBA6B /* POIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POIntroViewController.h; path = ../POIntroViewController.h; sourceTree = "<group>"; };
 		3C3AC7881942B3C800BCBA6B /* POIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POIntroViewController.m; path = ../POIntroViewController.m; sourceTree = "<group>"; };
 		3C3AC7891942B3C800BCBA6B /* POIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POIntroViewController.xib; path = ../POIntroViewController.xib; sourceTree = "<group>"; };
+		3C3DEE79195DCA16008F69FE /* FetchedResultsControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchedResultsControllerDataSource.h; sourceTree = "<group>"; };
+		3C3DEE7A195DCA16008F69FE /* FetchedResultsControllerDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchedResultsControllerDataSource.m; sourceTree = "<group>"; };
 		3C413960193EB90E00A4F262 /* POTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = POTimerViewController.h; path = ../POTimerViewController.h; sourceTree = "<group>"; };
 		3C413961193EB90E00A4F262 /* POTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = POTimerViewController.m; path = ../POTimerViewController.m; sourceTree = "<group>"; };
 		3C413962193EB90E00A4F262 /* POTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = POTimerViewController.xib; path = ../POTimerViewController.xib; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				3C73A2F71954C7FA00C17C21 /* CoreDataHelper.h */,
 				3C73A2F81954C7FA00C17C21 /* CoreDataHelper.m */,
 				3C835C3E194D48A70045E6B1 /* ObjectModel.xcdatamodeld */,
+				3C3DEE79195DCA16008F69FE /* FetchedResultsControllerDataSource.h */,
+				3C3DEE7A195DCA16008F69FE /* FetchedResultsControllerDataSource.m */,
 				3C3A8F1619437E2F004C2E0A /* Project List */,
 				7141B2EB193DBDFD0084F9F1 /* The Pomodoro */,
 				7141B304193DBDFE0084F9F1 /* The PomodoroTests */,
@@ -437,6 +442,7 @@
 				3C00EADA1946AC7B00E2BC87 /* TTAddCustomWorkPeriodViewController.m in Sources */,
 				3C3A8F2419439417004C2E0A /* TTProjectController.m in Sources */,
 				3C3AC78A1942B3C800BCBA6B /* POIntroViewController.m in Sources */,
+				3C3DEE7B195DCA16008F69FE /* FetchedResultsControllerDataSource.m in Sources */,
 				3C413963193EB90E00A4F262 /* POTimerViewController.m in Sources */,
 				3C835C40194D48A70045E6B1 /* ObjectModel.xcdatamodeld in Sources */,
 				3C835C531950F57D0045E6B1 /* ProjectController.m in Sources */,

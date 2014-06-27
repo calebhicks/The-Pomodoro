@@ -24,6 +24,7 @@
 - (void)startNewWorkPeriod;
 - (void)endWorkPeriod;
 - (void)updateDuration;
+- (NSFetchedResultsController*)projectFetchedResultsController;
 
 @end
 

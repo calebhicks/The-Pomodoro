@@ -138,5 +138,15 @@ static NSString * const createdKey = @"created";
     
 }
 
+- (NSFetchedResultsController*)projectFetchedResultsController{
+    
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Project"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"dateCreated" ascending:YES]];
+    return [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                               managedObjectContext:self.managedObjectContext
+                                                 sectionNameKeyPath:nil
+                                                          cacheName:nil];
+}
+
 
 @end

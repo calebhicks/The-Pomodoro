@@ -10,6 +10,8 @@
 #import "ProjectController.h"
 #import "WorkPeriod.h"
 #import "TTAddCustomWorkPeriodViewController.h"
+#import "FetchedResultsControllerDataSource.h"
+
 @import MessageUI;
 
 @interface TTProjectDetailViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
@@ -46,9 +48,16 @@
     // Do any additional setup after loading the view from its nib.
     self.projectTitle.text = self.project.projectTitle;
     self.projectDescription.text = self.project.projectDescription;
+
     
-    self.workPeriodTableView.dataSource = self;
-    self.workPeriodTableView.delegate = self;
+    FetchedResultsControllerDataSource *fetchedResultsControllerDataSource = [[FetchedResultsControllerDataSource alloc] initWithTableView:self.workPeriodTableView];
+    fetchedResultsControllerDataSource.fetchedResultsController = self.project.projectFetchedResultsController;
+    fetchedResultsControllerDataSource.delegate = self;
+    fetchedResultsControllerDataSource.reuseIdentifier = @"Cell";
+    
+//    self.workPeriodTableView.dataSource = fetchedResultsControllerDataSource;
+//    self.workPeriodTableView.delegate = self;
+    
     self.projectTitle.delegate = self;
     self.projectDescription.delegate = self;
     
@@ -69,7 +78,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [self updateLabel];
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
 }
 
 
@@ -115,7 +124,7 @@
     self.project.projectTitle = self.projectTitle.text;
     self.project.projectDescription = self.projectDescription.text;
     
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
     
     [[ProjectController sharedInstance]synchronize];
     
@@ -133,9 +142,6 @@
     
     addCustomWorkPeriodViewController.project = self.project;
     
-
-//    [[NSNotificationCenter defaultCenter] addObserver:self.project selector:@selector(addWorkPeriod) name:@"customworkperiod" object:nil];
-    
     [self presentViewController:addCustomWorkPeriodViewController animated:YES completion:nil];
 
     [[[self.toolbar items] objectAtIndex:0] setEnabled:YES];
@@ -143,7 +149,7 @@
     [[[self.toolbar items] objectAtIndex:4] setEnabled:NO];
     [[[self.toolbar items] objectAtIndex:6] setEnabled:YES];
     
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
     
 }
 
@@ -156,7 +162,7 @@
     
     [self startCurrentWorkPeriod];
     
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
 
     
 }
@@ -170,7 +176,7 @@
     
     [self endCurrentWorkPeriod];
     
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
 
 }
 
@@ -219,7 +225,7 @@
 - (void) startCurrentWorkPeriod{
     [self.project startNewWorkPeriod];
     
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
 }
 
 - (void) endCurrentWorkPeriod{
@@ -227,12 +233,12 @@
     
     [self updateLabel];
     
-    [self.workPeriodTableView reloadData];
+    //[self.workPeriodTableView reloadData];
 }
 
 - (void)updateLabel {
     
-    //update label is working, totalduration for project is stuck at zero
+    //update label is working, totalduration for project is stuck at zero, look at updatetotalduration
     
     NSNumber *projectDuration = self.project.totalDuration;
     NSInteger projectDurationInteger = [projectDuration integerValue];
