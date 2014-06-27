@@ -59,13 +59,18 @@
 
 - (IBAction)startTimePickerChanged:(id)sender {
     self.workPeriod.startTime = self.startTimePicker.date;
+    self.workPeriod.finishTime = self.finishTimePicker.date;
+    
+    NSDate *finishTimeDate = [self.workPeriod.startTime dateByAddingTimeInterval:3600];
+    
     [self.finishTimePicker setMinimumDate:self.workPeriod.startTime];
-    [self.finishTimePicker setDate:self.workPeriod.startTime animated:YES];
+    [self.finishTimePicker setDate:finishTimeDate animated:YES];
 }
 
 
 - (IBAction)finishTimePickerChanged:(id)sender {
     self.workPeriod.finishTime = self.finishTimePicker.date;
+    self.workPeriod.startTime = self.startTimePicker.date;
 }
 
 - (IBAction)addWorkPeriodButtonPressed:(id)sender {

@@ -11,8 +11,6 @@
 
 @interface ProjectController : NSObject
 
-+ (Project *)defaultProjectContext:(NSManagedObjectContext *)managedObjectContext;
-
 @property (strong, nonatomic, readonly) NSArray *projects;
 
 +(ProjectController *)sharedInstance;

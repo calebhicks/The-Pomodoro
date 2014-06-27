@@ -232,13 +232,15 @@
 
 - (void)updateLabel {
     
+    //update label is working, totalduration for project is stuck at zero
+    
     NSNumber *projectDuration = self.project.totalDuration;
     NSInteger projectDurationInteger = [projectDuration integerValue];
     NSInteger countdown = [projectDuration integerValue];
     
-    NSInteger hours;
-    NSInteger minutes;
-    NSInteger seconds;
+    long hours;
+    long minutes;
+    long seconds;
 
     if(projectDurationInteger > 3600){
         hours = floor([projectDuration integerValue]/3600);
@@ -258,10 +260,10 @@
 
     
     if (minutes < 10) {
-        self.timeLabel.text = [NSString stringWithFormat:@"%d:0%d", hours, minutes];
+        self.timeLabel.text = [NSString stringWithFormat:@"%ld:0%ld", hours, minutes];
         //[[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
     } else {
-        self.timeLabel.text = [NSString stringWithFormat:@"%d:%d", hours, minutes];
+        self.timeLabel.text = [NSString stringWithFormat:@"%ld:%ld", hours, minutes];
         //[[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentTime" object:self.timeLabel.text userInfo:nil];
     }
     

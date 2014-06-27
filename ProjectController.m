@@ -32,53 +32,14 @@ static NSString * const projectListKey = @"projectList";
     return sharedInstance;
 }
 
-+ (Project *)defaultProjectContext:(NSManagedObjectContext *)managedObjectContext {
-    
-    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Project"];
-    NSArray* objects = [managedObjectContext executeFetchRequest:request error:NULL];
-    Project *project = objects.firstObject;
-    
-    if (project == nil) {
-        
-        project = [NSEntityDescription insertNewObjectForEntityForName:@"Project"
-                                                  inManagedObjectContext:managedObjectContext];
-    }
-    
-    return project;
-    
-}
-
-+ (Project *)returnProjectAtIndex:(NSInteger)index{
-    
-    POAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-
-    NSManagedObjectContext *managedObjectContext = appDelegate.managedObjectContext;
-    
-    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Project"];
-    NSArray* objects = [managedObjectContext executeFetchRequest:request error:NULL];
-    Project *project = objects[index];
-    
-    return project;
-}
-
 -(void)setProjects:(NSArray *)projects{
     _projects = projects;
     
     [self synchronize];
-    
 }
 
 -(void)synchronize{
-//    NSMutableArray *projectDictionaries = [[NSMutableArray alloc]init];
-//    for (Project *project in self.projects) {
-//        [projectDictionaries addObject:[project projectDictionary]];
-//    }
-//    
-//    [[NSUserDefaults standardUserDefaults] setObject:projectDictionaries forKey:projectListKey];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-    
     [[[CoreDataHelper sharedInstance]managedObjectContext] save:nil];
-    
 }
 
 -(void)addProject:(Project *)project{
@@ -94,14 +55,6 @@ static NSString * const projectListKey = @"projectList";
 }
 
 -(void)loadFromCoreData{
-//    NSArray *projectDictionaries = [[NSUserDefaults standardUserDefaults] objectForKey:projectListKey];
-//    
-//    NSMutableArray *projects = [NSMutableArray new];
-//    for (NSDictionary *project in projectDictionaries) {
-//        [projects addObject:[[Project alloc] initWithDictionary:project]];
-//    }
-//    self.projects = projects;
-    
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Project"];
     self.projects = [[[CoreDataHelper sharedInstance]managedObjectContext] executeFetchRequest:request error:NULL];
 }

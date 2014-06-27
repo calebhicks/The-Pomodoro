@@ -71,8 +71,8 @@ static NSString * const createdKey = @"created";
         NSArray *workPeriodDictionaries = dictionary[periodsKey];
         NSMutableOrderedSet *workPeriods = [NSMutableOrderedSet new];
         for (NSDictionary *workPeriodDictionary in workPeriodDictionaries) {
-            WorkPeriod *workPeriod = [[WorkPeriod alloc] initWithDictionary:workPeriodDictionary];
-            [workPeriods addObject:workPeriod];
+            WorkPeriod *newWorkPeriod = [[WorkPeriod alloc] initWithDictionary:workPeriodDictionary];
+            [workPeriods addObject:newWorkPeriod];
         }
         self.workPeriods = workPeriods;
         
@@ -81,16 +81,12 @@ static NSString * const createdKey = @"created";
     return self;
 }
 
-- (void)addWorkPeriod:(WorkPeriod *)workPeriod{
+- (void)addWorkPeriod:(WorkPeriod *)newWorkPeriod{
 
-    self.workPeriod = workPeriod;
+    self.workPeriod = newWorkPeriod;
     
     self.workPeriod.project = self;
-    
-//    NSMutableOrderedSet *mutableWorkPeriods = [NSMutableOrderedSet orderedSetWithOrderedSet:self.workPeriods];
-//    [mutableWorkPeriods addObject:self.currentWorkPeriod];
-//    self.workPeriods = mutableWorkPeriods;
-//    [[ProjectController sharedInstance]synchronize];
+
 }
 
 - (void)startNewWorkPeriod{
@@ -98,7 +94,6 @@ static NSString * const createdKey = @"created";
     self.workPeriod = [NSEntityDescription insertNewObjectForEntityForName:@"WorkPeriod" inManagedObjectContext:[[CoreDataHelper sharedInstance] managedObjectContext]];
     self.workPeriod.startTime = [NSDate date];
     self.workPeriod.periodTitle = @"work period";
-    //workPeriod.description = @" ";
     self.workPeriod.project = self;
     
     [[ProjectController sharedInstance]synchronize];
@@ -114,16 +109,12 @@ static NSString * const createdKey = @"created";
 - (void)addRoundAsWorkPeriod:(WorkPeriod *)workPeriod{
 
     self.workPeriod.project = self;
-    
-//    NSMutableOrderedSet *mutableWorkPeriods = [NSMutableOrderedSet orderedSetWithOrderedSet:self.workPeriods];
-//    [mutableWorkPeriods addObject:workPeriod];
-//    self.workPeriods = mutableWorkPeriods;
-//    [[ProjectController sharedInstance]synchronize];
+
 }
 
 - (void)updateDuration{
     
-//    workPeriod.duration = [NSNumber numberWithDouble:[workPeriod.finishTime timeIntervalSinceDate:workPeriod.startTime]];
+    workPeriod.duration = [NSNumber numberWithDouble:[workPeriod.finishTime timeIntervalSinceDate:workPeriod.startTime]];
     
     [self updateTotalDuration];
     
@@ -135,9 +126,9 @@ static NSString * const createdKey = @"created";
     NSInteger timeInteger = totalDuration;
     
     
-    for (WorkPeriod *workPeriod in self.workPeriods) {
+    for (WorkPeriod *localWorkPeriod in self.workPeriods) {
         
-        timeInteger += [workPeriod.duration integerValue];
+        timeInteger += [localWorkPeriod.duration integerValue];
         
     }
     
