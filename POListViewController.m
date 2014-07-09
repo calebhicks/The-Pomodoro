@@ -11,6 +11,7 @@
 #import "ProjectController.h"
 #import "Project.h"
 #import "POAddToProjectViewController.h"
+#import "WorkPeriod.h"
 
 static NSString * const CurrentRoundKey = @"CurrentRound";
 
@@ -186,15 +187,15 @@ static NSString * const CurrentRoundKey = @"CurrentRound";
     
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     
-//    WorkPeriod *workPeriodToAdd = [[WorkPeriod alloc]init];
-//    
-//    workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
-//    workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
-//    workPeriodToAdd.duration = [NSNumber numberWithDouble:[workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime]];
-//    workPeriodToAdd.periodTitle = @"work period";
-//    workPeriodToAdd.periodDescription = @"from pomodoro";
-//    
-//    [project addRoundAsWorkPeriod:workPeriodToAdd];
+    WorkPeriod *workPeriodToAdd = [WorkPeriod new];
+
+    workPeriodToAdd.startTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"StartTime"];
+    workPeriodToAdd.finishTime = [[NSUserDefaults standardUserDefaults] objectForKey:@"EndTime"];
+    workPeriodToAdd.duration = [NSNumber numberWithDouble:[workPeriodToAdd.finishTime timeIntervalSinceDate:workPeriodToAdd.startTime]];
+    workPeriodToAdd.periodTitle = @"work period";
+    workPeriodToAdd.periodDescription = @"from pomodoro";
+    
+    [project addRoundAsWorkPeriod:workPeriodToAdd];
     
 }
 @end

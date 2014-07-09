@@ -89,28 +89,28 @@
     return YES;
 }
 
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-//    
-//    NSString *textFieldValue;
-//    NSInteger fieldInteger;
-//    
-//    if (textField == self.workPeriodTitleField) {
-//        textFieldValue = self.workPeriodTitleField.text;
-//        fieldInteger = 0;
-//    }
-//    
-//    if (textField == self.workPeriodDescriptionField){
-//        textFieldValue = self.workPeriodDescriptionField.text;
-//        fieldInteger = 1;
-//    }
-//    
-//    
-//    [self.delegate selectorDidModifyTextField:textFieldValue fieldModified:fieldInteger];
-//    
-//    return YES;
-//}
-//
-//-(NSString *) selectorDidModifyTextField:(NSString *)textFieldValue fieldModified:(NSInteger)fieldInteger{
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    
+    NSString *textFieldValue;
+    NSInteger fieldInteger;
+    
+    if (textField == self.workPeriodTitleField) {
+        textFieldValue = self.workPeriodTitleField.text;
+        fieldInteger = 0;
+    }
+    
+    if (textField == self.workPeriodDescriptionField){
+        textFieldValue = self.workPeriodDescriptionField.text;
+        fieldInteger = 1;
+    }
+    
+    
+    //[self.delegate selectorDidModifyTextField:textFieldValue fieldModified:fieldInteger];
+    
+    return YES;
+}
+
+//- (NSString *) selectorDidModifyTextField:(NSString *)textFieldValue fieldModified:(NSInteger)fieldInteger{
 //    workperiod.periodTitle = textFieldValue;
 //    workperiod.description = textFieldValue;
 //}
